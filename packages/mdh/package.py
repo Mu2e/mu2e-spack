@@ -28,7 +28,7 @@ class Mdh(Package):
     version("develop", branch="main")
 
     # always take the python from the envset
-    depends_on("python@3.9", type=("run"))
+    depends_on("python@3.9:", type=("run"))
     depends_on("metacat", type=("run"))
     depends_on("data-dispatcher", type=("run"))
     depends_on("rucio-clients", type=("run"))
