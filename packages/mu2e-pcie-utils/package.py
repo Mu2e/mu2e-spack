@@ -41,7 +41,7 @@ class Mu2ePcieUtils(CMakePackage):
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/mu2e-pcie-utils/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
-  
+
     patch("v2_08_05.patch", when="@v2_08_05")
 
     variant(

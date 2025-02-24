@@ -72,7 +72,7 @@ class ArtdaqCoreMu2e(CMakePackage):
         else:
             self.define("artdaq_core_OLD_STYLE_CONFIG_VARS", True)
         return args
-    
+
     def setup_run_environment(self, env):
         prefix = self.prefix
         # Ensure we can find plugin libraries.
