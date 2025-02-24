@@ -18,8 +18,8 @@ class Mu2ePcieUtils(CMakePackage):
     format."""
 
     homepage = "https://mu2e.fnal.gov"
-    url = "https://github.com/Mu2e/mu2e_pcie_utils/archive/refs/tags/v2_08_00.tar.gz"
-    git = "https://github.com/Mu2e/mu2e_pcie_utils.git"
+    url = "https://github.com/Mu2e/mu2e-pcie-utils/archive/refs/tags/v2_08_00.tar.gz"
+    git = "https://github.com/Mu2e/mu2e-pcie-utils.git"
 
     maintainers("eflumerf", "rrivera747")
 
@@ -39,7 +39,7 @@ class Mu2ePcieUtils(CMakePackage):
     version("v2_08_00", sha256="e322ff8f4fbc2c8aaf59ce1afcc5ac410b459717df18ba5432ea9f96be609083")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/mu2e_pcie_utils/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/mu2e-pcie-utils/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
   
     patch("v2_08_05.patch", when="@v2_08_05")

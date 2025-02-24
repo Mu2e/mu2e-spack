@@ -22,9 +22,9 @@ class ArtdaqMu2e(CMakePackage):
     and art module configuration, and the writing of event data to disk in ROOT
     format."""
 
-    homepage = "https://github.com/Mu2e/artdaq_mu2e"
-    url = "https://github.com/Mu2e/artdaq_mu2e/archive/refs/tags/v1_05_02.tar.gz"
-    git = "https://github.com/Mu2e/artdaq_mu2e.git"
+    homepage = "https://github.com/Mu2e/artdaq-mu2e"
+    url = "https://github.com/Mu2e/artdaq-mu2e/archive/refs/tags/v1_05_02.tar.gz"
+    git = "https://github.com/Mu2e/artdaq-mu2e.git"
 
     maintainers("eflumerf", "rrivera747")
 
@@ -43,7 +43,7 @@ class ArtdaqMu2e(CMakePackage):
     version("v1_05_02", sha256="480fcd8580a11e08de55dbc0e71a16482e0de0ba23a4ac633ff2e2353877d3be")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/artdaq_mu2e/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/artdaq-mu2e/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
     variant(

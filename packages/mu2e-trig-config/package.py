@@ -19,8 +19,8 @@ class Mu2eTrigConfig(CMakePackage):
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https:/mu2e.fnal.gov"
-    url = "https://github.com/Mu2e/mu2e_trig_config/archive/refs/tags/v01_02_00.tar.gz"
-    git = "https://github.com/Mu2e/mu2e_trig_config.git"
+    url = "https://github.com/Mu2e/mu2e-trig-config/archive/refs/tags/v01_02_00.tar.gz"
+    git = "https://github.com/Mu2e/mu2e-trig-config.git"
 
     maintainers("gianipez", "brownd1978")
 
@@ -38,7 +38,7 @@ class Mu2eTrigConfig(CMakePackage):
     version("v01_02_00", commit="25933fed70415367ad6ef1fd3c857bcc66e3bc24")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/mu2e_pcie_utils/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/mu2e-trig-config/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
     depends_on("cetmodules", type="build")

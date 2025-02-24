@@ -16,8 +16,8 @@ class OtsdaqMu2eDqm(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "https://mu2e.fnal.gov"
-    git = "https://github.com/Mu2e/otsdaq_mu2e_dqm.git"
-    url = "https://github.com/Mu2e/otsdaq_mu2e_dqm/archive/refs/tags/v1_04_00.tar.gz"
+    git = "https://github.com/Mu2e/otsdaq-mu2e-dqm.git"
+    url = "https://github.com/Mu2e/otsdaq-mu2e-dqm/archive/refs/tags/v1_04_00.tar.gz"
 
     maintainers("eflumerf", "rrivera747")
 
@@ -34,7 +34,7 @@ class OtsdaqMu2eDqm(CMakePackage):
     version("v1_04_00", sha256="363762bd66604d961dd6ec1f4f8cc5651e937456153806b942744ffe1d5246a0")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/otsdaq_mu2e_dqm/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/otsdaq-mu2e-dqm/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
     variant(

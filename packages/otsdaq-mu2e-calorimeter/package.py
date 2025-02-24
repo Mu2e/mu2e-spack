@@ -15,8 +15,8 @@ class OtsdaqMu2eCalorimeter(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "https://mu2e.fnal.gov"
-    git = "https://github.com/Mu2e/otsdaq_mu2e_calorimeter.git"
-    url = "https://github.com/Mu2e/otsdaq_mu2e_calorimeter/archive/refs/tags/v1_04_00.tar.gz"
+    git = "https://github.com/Mu2e/otsdaq-mu2e-calorimeter.git"
+    url = "https://github.com/Mu2e/otsdaq-mu2e-calorimeter/archive/refs/tags/v1_04_00.tar.gz"
 
     maintainers("eflumerf", "rrivera747")
 
@@ -33,7 +33,7 @@ class OtsdaqMu2eCalorimeter(CMakePackage):
     version("v1_04_00", sha256="7df9ff2c6f1cdf5d13b7b744b38c24f1e7901c7fac07dc64ccacd80736cea5fa")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/otsdaq_mu2e_calorimeter/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/otsdaq-mu2e-calorimeter/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
     variant(

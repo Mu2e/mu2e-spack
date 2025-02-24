@@ -25,8 +25,8 @@ class OtsdaqMu2e(CMakePackage):
     format."""
 
     homepage = "https://mu2e.fnal.gov"
-    url = "https://github.com/Mu2e/otsdaq_mu2e/archive/refs/tags/v1_02_02.tar.gz"
-    git = "https://github.com/Mu2e/otsdaq_mu2e.git"
+    url = "https://github.com/Mu2e/otsdaq-mu2e/archive/refs/tags/v1_02_02.tar.gz"
+    git = "https://github.com/Mu2e/otsdaq-mu2e.git"
 
     maintainers("eflumerf", "rrivera747")
 
@@ -45,7 +45,7 @@ class OtsdaqMu2e(CMakePackage):
     version("v1_02_02", sha256="19334074df56fed7c81e01d8689a50a8ab456e58e01f8ae83fb2461a32ad316a")
     
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/otsdaq_mu2e/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/otsdaq-mu2e/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
     variant(

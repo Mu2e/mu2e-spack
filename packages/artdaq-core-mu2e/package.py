@@ -24,8 +24,8 @@ class ArtdaqCoreMu2e(CMakePackage):
     format."""
 
     homepage = "https://mu2e.fnal.gov"
-    url = "https://github.com/Mu2e/artdaq_core_mu2e/archive/refs/tags/v1_08_04.tar.gz"
-    git = "https://github.com/Mu2e/artdaq_core_mu2e.git"
+    url = "https://github.com/Mu2e/artdaq-core-mu2e/archive/refs/tags/v1_08_04.tar.gz"
+    git = "https://github.com/Mu2e/artdaq-core-mu2e.git"
 
     maintainers("eflumerf", "rrivera747")
 
@@ -47,7 +47,7 @@ class ArtdaqCoreMu2e(CMakePackage):
     version("v1_08_04", sha256="a145f195ebc93a2a20e08bcbc227325b03852c5fe0702cfca3ba92ffd91fb398")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/artdaq_core_mu2e/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/Mu2e/artdaq-core-mu2e/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
     variant(
