@@ -43,7 +43,7 @@ class OtsdaqMu2e(CMakePackage):
     version("v1_04_00", sha256="9c5c2b2b39650cf0716f95a2b3b62f71f4f856cf55810e31f1d9b96c6ddd22de")
     version("v1_03_01", sha256="5b8fb4065ae3733d4280ddb87dd3822637e7ed00f0d7dda9a676abe6921c493d")
     version("v1_02_02", sha256="19334074df56fed7c81e01d8689a50a8ab456e58e01f8ae83fb2461a32ad316a")
-    
+
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/otsdaq-mu2e/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
@@ -91,4 +91,3 @@ class OtsdaqMu2e(CMakePackage):
         env.prepend_path("FHICL_FILE_PATH", prefix + "/fcl")
         # Cleaup.
         sanitize_environments(env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH")
-

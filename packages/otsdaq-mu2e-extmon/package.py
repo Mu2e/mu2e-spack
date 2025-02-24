@@ -11,7 +11,7 @@ def sanitize_environments(env, *vars):
     for var in vars:
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
-        
+
 class OtsdaqMu2eExtmon(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
