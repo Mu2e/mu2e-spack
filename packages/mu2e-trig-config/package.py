@@ -41,7 +41,7 @@ class Mu2eTrigConfig(CMakePackage):
         url = "https://github.com/Mu2e/mu2e-trig-config/archive/refs/tags/{0}.tar.gz"
         return url.format(version)
 
-    depends_on("cetmodules", type="build")
+    depends_on("cetmodules@3.26.00:", type="build")
 
     def setup_run_environment(self, env):
         prefix = self.prefix

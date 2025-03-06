@@ -54,7 +54,7 @@ class ArtdaqMu2e(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
-    depends_on("cetmodules", type="build")
+    depends_on("cetmodules@3.26.00:", type="build")
 
     depends_on("artdaq")
     depends_on("mu2e-pcie-utils")

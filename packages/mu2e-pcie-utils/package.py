@@ -56,7 +56,7 @@ class Mu2ePcieUtils(CMakePackage):
     variant("root",default=False,description="Build ROOT interface")
     variant("python",default=False,description="Build Python bindings")
 
-    depends_on("cetmodules", type="build")
+    depends_on("cetmodules@3.26.00:", type="build")
     depends_on("messagefacility")
     depends_on("artdaq-core-mu2e@develop", when="@ryan_test")
     depends_on("artdaq-core-mu2e@develop", when="@develop")

@@ -47,7 +47,7 @@ class OtsdaqMu2eTracker(CMakePackage):
     depends_on("otsdaq-mu2e")
     depends_on("Offline")
     depends_on("artdaq-core-demo")
-    depends_on("cetmodules", type="build")
+    depends_on("cetmodules@3.26.00:", type="build")
 
     def cmake_args(self):
         args = [

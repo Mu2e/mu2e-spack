@@ -56,7 +56,7 @@ class OtsdaqMu2e(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
-    depends_on("cetmodules", type="build")
+    depends_on("cetmodules@3.26.00:", type="build")
 
     depends_on("otsdaq")
     depends_on("otsdaq-utilities")
