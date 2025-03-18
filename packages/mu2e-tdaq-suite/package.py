@@ -39,10 +39,32 @@ class Mu2eTdaqSuite(BundlePackage):
     # The artdaq Dependency
     variant(
         "artdaq",
-        default="40000",
-        values=("0", "31202", "31203", "31207", "31300", "31301", "31400", "31401", "31500", "31600", "40000"),
+        default="31600",
+        values=(
+            "0",
+            "31202",
+            "31203",
+            "31204",
+            "31205",
+            "31207",
+            "31300",
+            "31301",
+            "31400",
+            "31401",
+            "31500",
+            "31600",
+        ),
         multi=False,
         description="Artdaq suite version to use",
+        when="@:v4_00_00",
+    )
+    variant(
+        "artdaq",
+        default="40000",
+        values=("0", "40000"),
+        multi=False,
+        description="Artdaq suite version to use",
+        when="@v4_00_00:,develop",
     )
     depends_on("artdaq-suite@v4_00_00", when="artdaq=40000")
     depends_on("artdaq-suite@v3_16_00", when="artdaq=31600")
@@ -60,9 +82,29 @@ class Mu2eTdaqSuite(BundlePackage):
     variant(
         "otsdaq",
         default="30000",
-        values=("0", "20608", "20609", "20700", "20800", "20801", "20802", "20900", "20901", "21000", 30000),
+        values=(
+            "0",
+            "20608",
+            "20609",
+            "20700",
+            "20800",
+            "20801",
+            "20802",
+            "20900",
+            "20901",
+            "21000",
+        ),
         multi=False,
         description="Otsdaq version to use",
+        when="@:v4_00_00",
+    )
+    variant(
+        "otsdaq",
+        default="30000",
+        values=("0", "30000"),
+        multi=False,
+        description="Otsdaq version to use",
+        when="@v4_00_00:,develop",
     )
     depends_on("otsdaq-suite@v3_00_00", when="otsdaq=30000")
     depends_on("otsdaq-suite@v2_10_00", when="otsdaq=21000")
