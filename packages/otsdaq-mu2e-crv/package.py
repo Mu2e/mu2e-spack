@@ -46,7 +46,8 @@ class OtsdaqMu2eCrv(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
-    depends_on("otsdaq-mu2e")
+    depends_on("otsdaq-mu2e@:v4_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-mu2e@v4_00_00:", when="@v4_00_00:,develop")
     depends_on("cetmodules@3.26.00:", type="build")
     depends_on("root+webgui+http+root7")
 

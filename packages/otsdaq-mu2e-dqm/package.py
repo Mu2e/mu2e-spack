@@ -46,8 +46,10 @@ class OtsdaqMu2eDqm(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
-    depends_on("otsdaq-mu2e")
-    depends_on("Offline")
+    depends_on("otsdaq-mu2e@:v4_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-mu2e@v4_00_00:", when="@v4_00_00:,develop")
+    depends_on("Offline@:12.00.00", when="@:v4_00_00")
+    depends_on("Offline@12.00.00:", when="@v4_00_00:,develop")
     depends_on("cetmodules@3.26.00:", type="build")
 
     def cmake_args(self):

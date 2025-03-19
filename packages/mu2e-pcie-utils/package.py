@@ -61,6 +61,7 @@ class Mu2ePcieUtils(CMakePackage):
     depends_on("messagefacility")
     depends_on("artdaq-core-mu2e@develop", when="@ryan_test")
     depends_on("artdaq-core-mu2e@develop", when="@develop")
+    depends_on("artdaq-core-mu2e@v4_00_00:", when="@v4_00_00:")
     depends_on("artdaq-core-mu2e@v3_00_00:", when="@v3_00_00:")
     depends_on("artdaq-core-mu2e@v2_00_00:v2_01_03", when="@v2_09_01")
     depends_on("trace")
