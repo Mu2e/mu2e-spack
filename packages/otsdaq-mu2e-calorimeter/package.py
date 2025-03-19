@@ -46,6 +46,7 @@ class OtsdaqMu2eCalorimeter(CMakePackage):
     )
 
     depends_on("otsdaq-mu2e")
+    depends_on("Offline", when="@v4_00_00:")
     depends_on("cetmodules@3.26.00:", type="build")
 
     def cmake_args(self):
