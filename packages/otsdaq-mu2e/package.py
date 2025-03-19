@@ -59,11 +59,16 @@ class OtsdaqMu2e(CMakePackage):
 
     depends_on("cetmodules@3.26.00:", type="build")
 
-    depends_on("otsdaq")
-    depends_on("otsdaq-utilities")
-    depends_on("otsdaq-components")
-    depends_on("otsdaq-epics")
-    depends_on("artdaq-mu2e")
+    depends_on("otsdaq@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq@v3_00_00:", when="@v4_00_00:,develop")
+    depends_on("otsdaq-utilities@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-utilities@v3_00_00:", when="@v4_00_00:,develop")
+    depends_on("otsdaq-components@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-components@v3_00_00:", when="@v4_00_00:,develop")
+    depends_on("otsdaq-epics@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-epics@v3_00_00:", when="@v4_00_00:,develop")
+    depends_on("artdaq-mu2e@:v4_00_00", when="@:v4_00_00")
+    depends_on("artdaq-mu2e@v4_00_00:", when="@v4_00_00:,develop")
 
     def cmake_args(self):
         args = [
