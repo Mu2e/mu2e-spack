@@ -131,7 +131,7 @@ class Mu2eTdaqSuite(BundlePackage):
         depends_on("mu2e-pcie-utils@v4_00_00")
         depends_on("artdaq-mu2e@v4_00_00")
         depends_on("otsdaq-mu2e@v4_00_00")
-        depends_on("otsdaq-mu2e-calorimeter@v4_00_00")
+        depends_on("otsdaq-mu2e-calorimeter@v4_00_01")
         depends_on("otsdaq-mu2e-crv@v4_00_00")
         depends_on("otsdaq-mu2e-extmon@v4_00_00")
         depends_on("otsdaq-mu2e-stm@v4_00_00")
