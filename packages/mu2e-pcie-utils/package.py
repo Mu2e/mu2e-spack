@@ -25,7 +25,6 @@ class Mu2ePcieUtils(CMakePackage):
 
     license("BSD")
 
-    version("ryan_test", commit="112bf71f774d02dbee316232c82250beb4306885")
     version("develop", branch="develop", get_full_repo=True)
 
     version("v4_00_00", commit="a33aaf44c1f46a03124c045cb2eac5cfc141b415")
@@ -59,9 +58,7 @@ class Mu2ePcieUtils(CMakePackage):
 
     depends_on("cetmodules@3.26.00:", type="build")
     depends_on("messagefacility")
-    depends_on("artdaq-core-mu2e@develop", when="@ryan_test")
-    depends_on("artdaq-core-mu2e@develop", when="@develop")
-    depends_on("artdaq-core-mu2e@v4_00_00:", when="@v4_00_00:")
+    depends_on("artdaq-core-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
     depends_on("artdaq-core-mu2e@v3_00_00:", when="@v3_00_00:")
     depends_on("artdaq-core-mu2e@v2_00_00:v2_01_03", when="@v2_09_01")
     depends_on("trace")
