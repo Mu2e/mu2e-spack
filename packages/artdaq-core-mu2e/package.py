@@ -63,7 +63,7 @@ class ArtdaqCoreMu2e(CMakePackage):
 
     depends_on("mu2e-pcie-utils@:v2_09_00", when="@:v1_09_02")
     depends_on("artdaq-core@:v4_00_00", when="@:v4_00_00")
-    depends_on("artdaq-core@v4_00_00:", when="@v4_00_00:,develop")
+    depends_on("artdaq-core@v4_00_00:,develop", when="@v4_00_00:,develop")
 
     def cmake_args(self):
         args = [
