@@ -54,7 +54,7 @@ class ArtdaqCoreMu2e(CMakePackage):
     variant(
         "cxxstd",
         default="20",
-        values=("14", "17", "20"),
+        values=("17", "20"),
         multi=False,
         description="Use the specified C++ standard when building.",
     )
@@ -64,6 +64,9 @@ class ArtdaqCoreMu2e(CMakePackage):
     depends_on("mu2e-pcie-utils@:v2_09_00", when="@:v1_09_02")
     depends_on("artdaq-core@:v4_00_00", when="@:v4_00_00")
     depends_on("artdaq-core@v4_00_00:,develop", when="@v4_00_00:,develop")
+
+    depends_on("artdaq-core cxxstd=17", when="cxxstd=17")
+    depends_on("artdaq-core cxxstd=20", when="cxxstd=20")
 
     def cmake_args(self):
         args = [
