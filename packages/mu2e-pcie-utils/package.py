@@ -65,6 +65,7 @@ class Mu2ePcieUtils(CMakePackage):
     depends_on("canvas-root-io",when="+root")
     depends_on("swig",when="+python")
     depends_on("python",when="+python")
+    depends_on("artdaq-suite")
 
     def cmake_args(self):
         args = [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), "-DWANT_KMOD={0}".format("TRUE" if "+kmod" in self.spec else "FALSE"), "-DBUILD_ROOT_INTERFACE={0}".format("TRUE" if "+root" in self.spec else "FALSE"), "-DBUILD_PYTHON_INTERFACE={0}".format("TRUE" if "+python" in self.spec else "FALSE")]

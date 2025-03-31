@@ -67,6 +67,8 @@ class OtsdaqMu2e(CMakePackage):
     depends_on("otsdaq-components@v3_00_00:,develop", when="@v4_00_00:,develop")
     depends_on("otsdaq-epics@:v3_00_00", when="@:v4_00_00")
     depends_on("otsdaq-epics@v3_00_00:,develop", when="@v4_00_00:,develop")
+    depends_on("otsdaq-suite")
+
     depends_on("artdaq-mu2e@:v4_00_00", when="@:v4_00_00")
     depends_on("artdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
 
