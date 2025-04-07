@@ -57,9 +57,9 @@ class ArtdaqMu2e(CMakePackage):
 
     depends_on("cetmodules@3.26.00:", type="build")
 
-    depends_on("artdaq@:v4_00_00",when="@:v4_00_00")
+    depends_on("artdaq@:v3_99_00",when="@:v3_99_00")
     depends_on("artdaq@v4_00_00,develop",when="@v4_00_00:,develop")
-    depends_on("mu2e-pcie-utils@:v4_00_00",when="@:v4_00_00")
+    depends_on("mu2e-pcie-utils@:v3_99_00",when="@:v3_99_00")
     depends_on("mu2e-pcie-utils@v4_00_00,develop",when="@v4_00_00:,develop")
 
     depends_on("artdaq cxxstd=17", when="cxxstd=17")

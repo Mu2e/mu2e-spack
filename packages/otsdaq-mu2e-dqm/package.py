@@ -46,10 +46,10 @@ class OtsdaqMu2eDqm(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
-    depends_on("otsdaq-mu2e@:v4_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-mu2e@:v3_99_00", when="@:v3_99_00")
     depends_on("otsdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
     depends_on("otsdaq-suite")
-    depends_on("Offline@:12.00.00", when="@:v4_00_00")
+    depends_on("Offline@:11.99.00", when="@:v3_99_00")
     depends_on("Offline@12.00.00:,develop,main", when="@v4_00_00:,develop")
     depends_on("cetmodules@3.26.00:", type="build")
 

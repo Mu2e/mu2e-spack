@@ -59,17 +59,17 @@ class OtsdaqMu2e(CMakePackage):
 
     depends_on("cetmodules@3.26.00:", type="build")
 
-    depends_on("otsdaq@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq@:v2_99_00", when="@:v3_99_00")
     depends_on("otsdaq@v3_00_00:,develop", when="@v4_00_00:,develop")
-    depends_on("otsdaq-utilities@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-utilities@:v2_99_00", when="@:v3_99_00")
     depends_on("otsdaq-utilities@v3_00_00:,develop", when="@v4_00_00:,develop")
-    depends_on("otsdaq-components@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-components@:v2_99_00", when="@:v3_99_00")
     depends_on("otsdaq-components@v3_00_00:,develop", when="@v4_00_00:,develop")
-    depends_on("otsdaq-epics@:v3_00_00", when="@:v4_00_00")
+    depends_on("otsdaq-epics@:v2_99_00", when="@:v3_99_00")
     depends_on("otsdaq-epics@v3_00_00:,develop", when="@v4_00_00:,develop")
     depends_on("otsdaq-suite")
 
-    depends_on("artdaq-mu2e@:v4_00_00", when="@:v4_00_00")
+    depends_on("artdaq-mu2e@:v3_99_00", when="@:v3_99_00")
     depends_on("artdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
 
     def cmake_args(self):
