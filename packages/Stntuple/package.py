@@ -10,7 +10,7 @@ def sanitize_environments(env, *vars):
     for var in vars:
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
-        
+
 class Stntuple(CMakePackage):
     """Stntuple by Pavel Murat"""
 
@@ -59,11 +59,11 @@ class Stntuple(CMakePackage):
         args = [ self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), ]
         if os.path.exists("CMakePresets.cmake"):
             args.extend(["--preset", "default"])
-            
+
 #        args.append('-DNO_PGSQL={0}'.format('FALSE' if "+sqlite" in self.spec else 'TRUE'))
 #        args.append('-DNO_SQLITE={0}'.format('FALSE' if "+sqlite" in self.spec else 'TRUE'))
 #        args.append('-DNO_OPENCV={0}'.format('FALSE' if "+opencv" in self.spec else 'TRUE'))
-            
+
         return args
 
     def setup_run_environment(self, env):
