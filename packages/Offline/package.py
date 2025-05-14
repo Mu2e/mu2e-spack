@@ -32,6 +32,7 @@ class Offline(CMakePackage):
     version("11.02.00", commit="83ca01342f4ad86c4452babbb8a7083412dcfa88")
     version("11.01.00", commit="1560c76")
     version("11.00.01", commit="67f7904d5")
+    version("10.40.00", commit="90410d6ca1ffe37d6ce1b0314dccbe7e28cc804a")
     version("10.36.00", commit="86ef8c73e1683532cec252bbfe6fa64815a9d4d3")
 
     variant("g4", default=True, description="Whether to build Geant4-dependent packages")
@@ -57,8 +58,8 @@ class Offline(CMakePackage):
     depends_on("kinkal@3.1.3", when="@11.03.00")
     depends_on("kinkal@3.1.4", when="@11.04.00")
     depends_on("kinkal@3.1.5", when="@11.05.01")
-    depends_on("kinkal@3.1.6", when="@develop") # UPDATE AS NEEDED
-    depends_on("kinkal@3.1.6,main", when="@main") # UPDATE AS NEEDED
+    depends_on("kinkal@3.2.1", when="@develop") # UPDATE AS NEEDED
+    depends_on("kinkal@3.2.1,main", when="@main") # UPDATE AS NEEDED
 
     depends_on("btrk")
     depends_on("gallery")
