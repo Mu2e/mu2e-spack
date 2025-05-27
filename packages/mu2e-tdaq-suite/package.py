@@ -12,6 +12,7 @@ class Mu2eTdaqSuite(BundlePackage):
     """The Mu2e TDAQ Suite, the software used for Mu2e trigger and data acquisition"""
 
     version("develop")
+    version("v6_00_00")
     version("v5_00_00")
     version("v4_00_00")
     version("v3_04_00")
@@ -61,12 +62,13 @@ class Mu2eTdaqSuite(BundlePackage):
     )
     variant(
         "artdaq",
-        default="40100",
-        values=("0", "40000", "40100"),
+        default="40200",
+        values=("0", "40000", "40100", "40200"),
         multi=False,
         description="Artdaq suite version to use",
         when="@v4_00_00:,develop",
     )
+    depends_on("artdaq-suite@v4_02_00", when="artdaq=40200")
     depends_on("artdaq-suite@v4_01_00", when="artdaq=40100")
     depends_on("artdaq-suite@v4_00_00", when="artdaq=40000")
     depends_on("artdaq-suite@v3_16_00", when="artdaq=31600")
@@ -103,11 +105,12 @@ class Mu2eTdaqSuite(BundlePackage):
     variant(
         "otsdaq",
         default="30100",
-        values=("0", "30000", "30100"),
+        values=("0", "30000", "30100", "30200"),
         multi=False,
         description="Otsdaq version to use",
         when="@v4_00_00:,develop",
     )
+    depends_on("otsdaq-suite@v3_02_00", when="otsdaq=30200")
     depends_on("otsdaq-suite@v3_01_00", when="otsdaq=30100")
     depends_on("otsdaq-suite@v3_00_00", when="otsdaq=30000")
     depends_on("otsdaq-suite@v2_10_00", when="otsdaq=21000")
@@ -129,6 +132,21 @@ class Mu2eTdaqSuite(BundlePackage):
     )
 
     # Bundle package, list packages that are part of the bundle
+    with when("@v6_00_00"):
+        depends_on("artdaq-core-mu2e@v7_00_00")
+        depends_on("mu2e-pcie-utils@v5_00_00")
+        depends_on("artdaq-mu2e@v5_00_00")
+        depends_on("otsdaq-mu2e@v6_00_00")
+        depends_on("otsdaq-mu2e-calorimeter@v6_00_00")
+        depends_on("otsdaq-mu2e-crv@v4_00_00")
+        depends_on("otsdaq-mu2e-extmon@v4_00_00")
+        depends_on("otsdaq-mu2e-stm@v4_00_00")
+        depends_on("Offline@12.02.00~g4", when="~g4")
+        depends_on("Offline@12.02.00+g4", when="+g4")
+        depends_on("otsdaq-mu2e-tracker@v5_00_00")
+        depends_on("otsdaq-mu2e-dqm@v5_00_00")
+        depends_on("otsdaq-mu2e-trigger@v5_00_00")
+        depends_on("mu2e-trig-config@v6_00_00")
     with when("@v5_00_00"):
         depends_on("artdaq-core-mu2e@v5_01_00")
         depends_on("mu2e-pcie-utils@v4_00_00")
