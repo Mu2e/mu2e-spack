@@ -24,6 +24,7 @@ class OtsdaqMu2eCalorimeter(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v6_00_00", commit="3e8d6042ad5f8b0582d23417663f29f79c288ce5")
     version("v5_00_00", commit="dcf14e89043bbc292c394fa942dc869ee9981e01")
     version("v4_00_01", commit="a264ab53c3c8f52fb1e80f2ae14c4534ce50320f")
     version("v4_00_00", commit="bdbcff549d87adb1c71e92d35d6d66f8ead0a37a")
