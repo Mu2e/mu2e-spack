@@ -10,9 +10,6 @@ import sys
 
 from spack import *
 
-#def patcher(x):
-#    cetmodules_20_migrator(".", "cry", "1.7")
-
 
 class Crvteststand(MakefilePackage):
     """performs calibration and reco on midas readout of Mu2e CRV teststand data."""
