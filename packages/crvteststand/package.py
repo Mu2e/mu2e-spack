@@ -44,19 +44,6 @@ class Crvteststand(MakefilePackage):
     version("10", sha256="26102b316415dc4f214e8e3c7ed1a042dc0bbe48be3def71e1217795d9d3ed7c")
 
 
-
-#    @run_before("build")
-#    def filter_makefile(self):
-#        makefile = FileFilter("Makefile.common")
-#        makefile.filter("CXX = .*", "")
-#        cxxstd = self.spec.variants["cxxstd"].value
-#        cxxstdflag = (
-#            "" if cxxstd == "default" else getattr(self.compiler, "cxx{0}_flag".format(cxxstd))
-#        )
-#        with open("Makefile.local", "w") as f:
-#            f.write("CXXFLAGS += -O3 -g -DNDEBUG -fno-omit-frame-pointer -fPIC \\\n")
-#            f.write("            {0}\n".format(cxxstdflag))
-
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/CRVteststand/archive/refs/tags/v{:s}.tar.gz"
         return url.format(version.string)
@@ -70,38 +57,11 @@ class Crvteststand(MakefilePackage):
         copy(self.stage.source_path+"/*.sh",prefix.bin)
         copy(self.stage.source_path+"/*.C",prefix.bin)
         copy(self.stage.source_path+"/*.txt",prefix)
-        #copy(self.stage.source_path+"/parserCrv",prefix.bin)
-        #copy(self.stage.source_path+"/calibCrv",prefix.bin)
-        #copy(self.stage.source_path+"/recoCrv",prefix.bin)
-        #copy(self.stage.source_path+"/config.txt",prefix)
-        #copy(self.stage.source_path+"/",prefix)
-        #copy(self.stage.source_path+"/",prefix)
         mkdir(prefix.python)
         install_tree(self.stage.source_path + "/analysis", prefix.analysis)
         install_tree(self.stage.source_path + "/eventdisplay", prefix.eventdisplay)
         install_tree(self.stage.source_path + "/preprocess", prefix.preprocess)
 
 
-#    @property
-#    def install_targets(self):
-#        return ("PREFIX={0}".format(prefix), "install")
-
     def setup_run_environment(self, run_env):
-#     pathPrepend(PATH, ${${UPS_PROD_NAME_UC}_FQ_DIR})
-#      pathPrepend(PYTHONPATH, $${UPS_PROD_NAME_UC}_FQ_DIR/analysis/efficiency_de
-#      pathPrepend(PYTHONPATH, $${UPS_PROD_NAME_UC}_FQ_DIR/analysis/testbench )
         run_env.set("CRVTESTSTAND_DIR", self.prefix)
-#        run_env.set("CRY_LIB", self.prefix.lib)
-#        run_env.set("CRYDATAPATH", self.prefix.data)
-#        # Ensure we can find plugin libraries.
-#        run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.src)
-
-#    @run_after("install")
-#    def rename_README(self):
-#        import os
-#
-#        if os.path.exists(join_path(self.spec.prefix, "README")):
-#            os.rename(
-#                join_path(self.spec.prefix, "README"),
-#                join_path(self.spec.prefix, "README_%s" % self.spec.name),
-#            )
