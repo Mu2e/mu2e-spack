@@ -8,7 +8,7 @@ import glob
 import os
 import sys
 
-from spack import *
+from spack.package import *
 
 
 class Crvteststand(MakefilePackage):
