@@ -12,6 +12,7 @@ class Mu2eTdaqSuite(BundlePackage):
     """The Mu2e TDAQ Suite, the software used for Mu2e trigger and data acquisition"""
 
     version("develop")
+    version("v7_00_00_cand")
     version("v6_00_00_cand")
     version("v5_00_00")
     version("v4_00_00")
@@ -132,6 +133,21 @@ class Mu2eTdaqSuite(BundlePackage):
     )
 
     # Bundle package, list packages that are part of the bundle
+    with when("@v7_00_00_cand"):
+        depends_on("artdaq-core-mu2e@v8_00_02")
+        depends_on("mu2e-pcie-utils@v6_00_00")
+        depends_on("artdaq-mu2e@v6_00_00")
+        depends_on("otsdaq-mu2e@v7_00_00")
+        depends_on("otsdaq-mu2e-calorimeter@v7_00_00")
+        depends_on("otsdaq-mu2e-crv@v5_00_00")
+        depends_on("otsdaq-mu2e-extmon@v4_00_00")
+        depends_on("otsdaq-mu2e-stm@v4_00_00")
+        depends_on("Offline@12.03.00~g4", when="~g4")
+        depends_on("Offline@12.03.00+g4", when="+g4")
+        depends_on("otsdaq-mu2e-tracker@v6_00_00")
+        depends_on("otsdaq-mu2e-dqm@v6_00_00")
+        depends_on("otsdaq-mu2e-trigger@v6_00_00")
+        depends_on("mu2e-trig-config@v7_00_00")
     with when("@v6_00_00_cand"):
         depends_on("artdaq-core-mu2e@v7_00_00")
         depends_on("mu2e-pcie-utils@v5_00_00")
