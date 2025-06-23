@@ -24,6 +24,7 @@ class OtsdaqMu2eTrigger(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v6_00_00", commit="75b98367159774fefb308a21c9f10c029f9d043f")
     version("v5_00_00", commit="c6213c432f9e2a2c85d7a61454849933d0f78c5b")
     version("v4_00_00", commit="d85b0c516a7f0dcbb616434c35bf01d13cf3206a")
     version("v3_04_00", commit="5665ade59ed50e468e3096b86d2315ffc05cf48e")
