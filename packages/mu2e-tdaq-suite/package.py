@@ -108,7 +108,7 @@ class Mu2eTdaqSuite(BundlePackage):
     )
     variant(
         "otsdaq",
-        default="30100",
+        default="30300",
         values=("0", "30000", "30100", "30200", "30300"),
         multi=False,
         description="Otsdaq version to use",
