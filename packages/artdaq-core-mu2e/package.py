@@ -72,7 +72,6 @@ class ArtdaqCoreMu2e(CMakePackage):
 
     depends_on("artdaq-core cxxstd=17", when="cxxstd=17")
     depends_on("artdaq-core cxxstd=20", when="cxxstd=20")
-    depends_on("artdaq-suite")
 
     def cmake_args(self):
         args = [
