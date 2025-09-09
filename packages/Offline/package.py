@@ -49,6 +49,9 @@ class Offline(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
+    variant("build_type", default="RelWithDebInfo",
+            description="CMake build type")
+
     # Direct dependencies, see ups/product_deps
     depends_on("geant4", when="+g4")
     depends_on("cetmodules@3.26.00:", type="build")
