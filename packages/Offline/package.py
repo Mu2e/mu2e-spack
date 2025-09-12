@@ -95,6 +95,10 @@ class Offline(CMakePackage):
         env.prepend_path("MU2E_SEARCH_PATH", "/cvmfs/mu2e.opensciencegrid.org/DataFiles")
         env.prepend_path("MU2E_SEARCH_PATH", prefix + "/fcl")
         env.prepend_path("MU2E_SEARCH_PATH", prefix + "/share")
+        # show summary of configuration at start of mu2e exe
+        pkgs = ["art", "root", "kinkal", "artdaq-core-mu2e"]
+        banner = " ".join(f"{pkg}@{self.spec[pkg].version}" for pkg in pkgs)
+        env.set("OFFLINE_BANNER",banner)
         # Cleaup.
         sanitize_environments(env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH", "MU2E_SEARCH_PATH")
 
