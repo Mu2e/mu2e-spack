@@ -65,8 +65,8 @@ class Offline(CMakePackage):
     depends_on("KinKal@3.1.3", when="@11.03.00")
     depends_on("KinKal@3.1.4", when="@11.04.00")
     depends_on("KinKal@3.1.5", when="@11.05.01")
-    depends_on("KinKal@3.4.2,develop", when="@develop") # UPDATE AS NEEDED
-    depends_on("KinKal@3.4.2,main", when="@main") # UPDATE AS NEEDED
+    depends_on("KinKal@3.4.3,develop", when="@develop") # UPDATE AS NEEDED
+    depends_on("KinKal@3.4.3,main", when="@main") # UPDATE AS NEEDED
 
     depends_on("btrk")
     depends_on("gallery")
