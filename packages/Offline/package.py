@@ -58,15 +58,15 @@ class Offline(CMakePackage):
     depends_on("artdaq-core-mu2e@:v3_99_00",when="@:11.99.00")
     depends_on("artdaq-core-mu2e@v4_00_00:,develop",when="@12.00.00:,develop")
     depends_on("art-root-io")
-    depends_on("KinKal")
+    depends_on("kinkal")
 
-    depends_on("KinKal@3:", when="@11.01.00:")
-    depends_on("KinKal@3.0.1", when="@11.02.00")
-    depends_on("KinKal@3.1.3", when="@11.03.00")
-    depends_on("KinKal@3.1.4", when="@11.04.00")
-    depends_on("KinKal@3.1.5", when="@11.05.01")
-    depends_on("KinKal@3.4.3,develop", when="@develop") # UPDATE AS NEEDED
-    depends_on("KinKal@3.4.3,main", when="@main") # UPDATE AS NEEDED
+    depends_on("kinkal@3:", when="@11.01.00:")
+    depends_on("kinkal@3.0.1", when="@11.02.00")
+    depends_on("kinkal@3.1.3", when="@11.03.00")
+    depends_on("kinkal@3.1.4", when="@11.04.00")
+    depends_on("kinkal@3.1.5", when="@11.05.01")
+    depends_on("kinkal@3.4.3,develop", when="@develop") # UPDATE AS NEEDED
+    depends_on("kinkal@3.4.3,main", when="@main") # UPDATE AS NEEDED
 
     depends_on("btrk")
     depends_on("gallery")
@@ -96,7 +96,7 @@ class Offline(CMakePackage):
         env.prepend_path("MU2E_SEARCH_PATH", prefix + "/fcl")
         env.prepend_path("MU2E_SEARCH_PATH", prefix + "/share")
         # show summary of configuration at start of mu2e exe
-        pkgs = ["art", "root", "KinKal", "artdaq-core-mu2e"]
+        pkgs = ["art", "root", "kinkal", "artdaq-core-mu2e"]
         banner = " ".join(f"{pkg}@{self.spec[pkg].version}" for pkg in pkgs)
         env.set("OFFLINE_BANNER",banner)
         # Cleaup.
