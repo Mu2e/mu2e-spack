@@ -18,6 +18,7 @@ class Kinkal(CMakePackage):
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)
 
+    version("3.5.0", sha256="c0f5590c5d606801d35e5963cf6a1b73684b698843b6342307abf95322996e3b")
     version("3.4.3", sha256="0df429d0e3baa6fb98540a013514490e12c892b0d530e4e3588e09adb2abfa0b")
     version("3.4.2", sha256="7270dfe220c27b590fa067bf6c9cb109940154bf150e0fe0763622cbad227f99")
     version("3.2.1", sha256="deff2becf1c628b31b2e37a7f4a3f6f94aced177d3b830f52bda459b1bdb8925")
