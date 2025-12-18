@@ -6,8 +6,8 @@ from spack.package import *
 
 
 class EpicsStreamdevice(MakefilePackage):
-    """StreamDevice is a generic EPICS device support for devices with a "byte stream" based communication interface. 
-    That means devices that can be controlled by sending and receiving strings (in the broadest sense, including non-printable characters and even null-bytes). 
+    """StreamDevice is a generic EPICS device support for devices with a "byte stream" based communication interface.
+    That means devices that can be controlled by sending and receiving strings (in the broadest sense, including non-printable characters and even null-bytes).
     Examples for this type of communication interface are serial line (RS-232, RS-485, ...), IEEE-488 (also known as GPIB or HP-IB), and telnet-like TCP/IP."""
 
     homepage = "https://paulscherrerinstitute.github.io/StreamDevice/"
