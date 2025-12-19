@@ -16,7 +16,14 @@ class Kinkal(CMakePackage):
     maintainers = ['brownd1978','rlcee']
 
     version("main", branch="main", get_full_repo=True)
+    version("develop", branch="main", get_full_repo=True)
 
+    version("3.5.0", sha256="c0f5590c5d606801d35e5963cf6a1b73684b698843b6342307abf95322996e3b")
+    version("3.4.3", sha256="0df429d0e3baa6fb98540a013514490e12c892b0d530e4e3588e09adb2abfa0b")
+    version("3.4.2", sha256="7270dfe220c27b590fa067bf6c9cb109940154bf150e0fe0763622cbad227f99")
+    version("3.2.1", sha256="deff2becf1c628b31b2e37a7f4a3f6f94aced177d3b830f52bda459b1bdb8925")
+    version("3.2.0", sha256="81bc07ad3ae2425f8fe0e95696b2070eac714dd4513c96cfb84c6af07de5122b")
+    version("3.1.7", sha256="1266bdceca1b09335b460a0d35ac0d339507ff0357e8e91f5a4d31eafa6a89cb")
     version("3.1.6", sha256="0d2af69c36b8c17f3887fbd9d879a0647d438d0ba5929b0fd53631ae429a40ad")
     version("3.1.5", sha256="5a964a0a88a7b55b277524d4280c8b428841f6953e9b133adc1dd2f9e9bb1a17")
     version("3.1.4", sha256="04492cae4b473e75e4240ff76c590e6f0a7f9528da367e74b2041cf9c4b0fef2")

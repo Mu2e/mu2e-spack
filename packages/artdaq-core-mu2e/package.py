@@ -33,6 +33,13 @@ class ArtdaqCoreMu2e(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v8_03_00", sha256="cb899545566ba64131e159f687f926e8094b3d0056f44acf2312afdf1283a4b2")
+    version("v8_02_00", commit="0d6dbe9045de23f091c6a13703c69ce0e68a41e2")
+    version("v8_01_00", commit="d39fedd0ac95d3ee071a4a88b3bfa9021c58d472")
+    version("v8_00_02", commit="2ca87b7c723e28701cca9dad9b9dfc587de8b127")
+    version("v7_00_00", commit="7bbb6e40d291c2096ef42fd96a21b8b374c96906")
+    version("v5_01_00", commit="224c1fc8d4e9736587172ac53498d31dc53ae9b7")
+    version("v5_00_00", commit="f62c63654ddb648a9dc41010bf9bf98e6d2bbc15")
     version("v4_00_00", commit="014d863b4713d42b0fb15c5d97ec2ffd36a83019")
     version("v3_04_00", commit="e023e3e79970a74628aba3cf6b122c50e1fea1de")
     version("v3_03_01", commit="c426d9775165539da76f6a813c007371460652c3")
@@ -59,6 +66,9 @@ class ArtdaqCoreMu2e(CMakePackage):
         description="Use the specified C++ standard when building.",
     )
 
+    variant("build_type", default="RelWithDebInfo",
+            description="CMake build type")
+
     depends_on("cetmodules@3.26.00:", type="build")
 
     depends_on("mu2e-pcie-utils@:v2_09_00", when="@:v1_09_02")
@@ -67,7 +77,6 @@ class ArtdaqCoreMu2e(CMakePackage):
 
     depends_on("artdaq-core cxxstd=17", when="cxxstd=17")
     depends_on("artdaq-core cxxstd=20", when="cxxstd=20")
-    depends_on("artdaq-suite")
 
     def cmake_args(self):
         args = [

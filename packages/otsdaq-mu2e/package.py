@@ -34,6 +34,10 @@ class OtsdaqMu2e(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v8_00_00", commit="43d31e8d571f0497c7c99f6ebfabeeec22d9f3cd")
+    version("v7_00_00", commit="5a9ed68b70c5ab251bd05c33212c5b8e321c78ed")
+    version("v6_00_00", commit="b47cc8c503010d223d9db1db52cd7923e1898b77")
+    version("v5_00_00", commit="3221efe916e721183d66d12c1aaac9e4e2887d5b")
     version("v4_00_00", commit="af80e7917f73dcf06bb40465609be82827f4d26a")
     version("v3_04_00", commit="7f1e42edb3bc1590e6ea5add941aafdaf9222bc2")
     version("v3_03_01", commit="50a13f6747f4e03579c6152440d597b203e96ea0")
