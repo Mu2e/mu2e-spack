@@ -24,6 +24,7 @@ class Offline(CMakePackage):
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True) # spack-mpd expects develop version
 
+    version("13.00.08", commit="a04e36a5554502b2894d550f3795fc5f2bf89495")
     version("12.05.00", commit="ee56883fbd6752350952e975b7a843cc900d905c")
     version("12.04.00", commit="5c4a7548f98b2be43eb73ae44980b4e7ad7c90c8")
     version("12.03.00", commit="fb0c0b1c05d9a22eae512270fe9ff110cb9174fb")
@@ -66,6 +67,7 @@ class Offline(CMakePackage):
     depends_on("kinkal@3.1.4", when="@11.04.00")
     depends_on("kinkal@3.1.5", when="@11.05.01")
     depends_on("kinkal@3.2.1", when="@12.05.00")
+    depends_on("kinkal@3.5.1", when="@13.00.08")
     depends_on("kinkal@3.5.1,develop", when="@develop") # UPDATE AS NEEDED
     depends_on("kinkal@3.5.1,main", when="@main") # UPDATE AS NEEDED
 
