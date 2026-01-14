@@ -12,7 +12,7 @@ class Mu2eTdaqSuite(BundlePackage):
     """The Mu2e TDAQ Suite, the software used for Mu2e trigger and data acquisition"""
 
     version("develop")
-    version("v9_00_00_cand")
+    version("v9_00_00")
     version("v8_00_00")
     version("v7_01_00_cand")
     version("v7_00_00_cand")
@@ -140,7 +140,7 @@ class Mu2eTdaqSuite(BundlePackage):
     )
 
     # Bundle package, list packages that are part of the bundle
-    with when("@v9_00_00_cand"):
+    with when("@v9_00_00"):
         depends_on("artdaq-core-mu2e@v9_00_00")
         depends_on("mu2e-pcie-utils@v8_00_00")
         depends_on("artdaq-mu2e@v7_00_00")
