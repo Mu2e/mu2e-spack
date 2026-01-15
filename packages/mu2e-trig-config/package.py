@@ -48,6 +48,7 @@ class Mu2eTrigConfig(CMakePackage):
         return url.format(version)
 
     depends_on("cetmodules@3.26.00:", type="build")
+    depends_on("python")
 
     def setup_run_environment(self, env):
         prefix = self.prefix
