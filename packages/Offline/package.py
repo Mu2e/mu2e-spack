@@ -82,6 +82,7 @@ class Offline(CMakePackage):
     depends_on("postgresql")
     depends_on("openblas")
     depends_on("root+tmva-sofie+spectrum+opengl")
+    depends_on("boost+iostreams+program_options")
 
     def cmake_args(self):
         args = [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), "-DWITH_G4={0}".format("TRUE" if "+g4" in self.spec else "FALSE")]
