@@ -29,6 +29,7 @@ class Mu2eTrigConfig(CMakePackage):
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)  # spack-mpd expects develop version
 
+    version("v8_00_00", commit="dc9ef6de8b4d2bc2b9c68511c1d7c0682b5be7e9")
     version("v7_03_00", commit="284cc216ccc0c22295901d063d78f90533f7dee1")
     version("v7_00_00", commit="332b9bc3b23ff161f976f2ddf7d45240298fdab4")
     version("v6_00_00", commit="c10b1f65e17ac4840a7efc4591b61dc0f26cd980")
@@ -47,6 +48,7 @@ class Mu2eTrigConfig(CMakePackage):
         return url.format(version)
 
     depends_on("cetmodules@3.26.00:", type="build")
+    depends_on("python")
 
     def setup_run_environment(self, env):
         prefix = self.prefix
