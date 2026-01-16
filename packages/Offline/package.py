@@ -54,7 +54,7 @@ class Offline(CMakePackage):
             description="CMake build type")
 
     # Direct dependencies, see ups/product_deps
-    depends_on("geant4", when="+g4")
+    depends_on("geant4@11:", when="+g4")
     depends_on("cetmodules@3.26.00:", type="build")
     depends_on("artdaq-core-mu2e@:v3_99_00",when="@:11.99.00")
     depends_on("artdaq-core-mu2e@v4_00_00:,develop",when="@12.00.00:,develop")
