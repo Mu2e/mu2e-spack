@@ -40,7 +40,7 @@ class Offline(CMakePackage):
     version("10.40.00", commit="90410d6ca1ffe37d6ce1b0314dccbe7e28cc804a")
     version("10.36.00", commit="86ef8c73e1683532cec252bbfe6fa64815a9d4d3")
 
-    variant("g4", default=True, description="Whether to build Geant4-dependent packages")
+    variant("g4", default=False, description="Whether to build Geant4-dependent packages")
 
     variant(
         "cxxstd",
