@@ -53,6 +53,8 @@ class Offline(CMakePackage):
     variant("build_type", default="RelWithDebInfo",
             description="CMake build type")
 
+    variant("python",default=False,description="Build Python bindings")
+
     # Direct dependencies, see ups/product_deps
     depends_on("geant4@11:", when="+g4")
     depends_on("cetmodules@3.26.00:", type="build")
@@ -85,7 +87,7 @@ class Offline(CMakePackage):
     depends_on("boost+iostreams+program_options")
 
     def cmake_args(self):
-        args = [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), "-DWITH_G4={0}".format("TRUE" if "+g4" in self.spec else "FALSE")]
+        args = [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), "-DWITH_G4={0}".format("TRUE" if "+g4" in self.spec else "FALSE"),"-DBUILD_PYTHON_INTERFACE={0}".format("TRUE" if "+python" in self.spec else "FALSE")]
         return args
 
     def setup_run_environment(self, env):
