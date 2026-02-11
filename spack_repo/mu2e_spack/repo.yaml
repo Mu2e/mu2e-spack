@@ -1,2 +1,3 @@
 repo:
-  namespace: 'mu2e-spack'
+  namespace: 'mu2e_spack'
+  api: v2.0
