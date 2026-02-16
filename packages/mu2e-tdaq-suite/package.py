@@ -30,10 +30,10 @@ class Mu2eTdaqSuite(BundlePackage):
     version("v1_02_02")
 
     # The art-suite Dependency
-    squals = ("112", "117", "118", "122", "123", "126", "128", "130", "131", "132")
+    squals = ("112", "117", "118", "122", "123", "126", "128", "130", "131", "132", "133")
     variant(
         "s",
-        default="132",
+        default="133",
         values=("0",) + squals,
         multi=False,
         description="Art suite version to use",
@@ -66,12 +66,13 @@ class Mu2eTdaqSuite(BundlePackage):
     )
     variant(
         "artdaq",
-        default="40300",
-        values=("0", "40000", "40100", "40200", "40300", "40401"),
+        default="40500",
+        values=("0", "40000", "40100", "40200", "40300", "40401", "40500"),
         multi=False,
         description="Artdaq suite version to use",
         when="@v4_00_00:,develop",
     )
+    depends_on("artdaq-suite@v4_05_00", when="artdaq=40500")
     depends_on("artdaq-suite@v4_04_01", when="artdaq=40401")
     depends_on("artdaq-suite@v4_03_00", when="artdaq=40300")
     depends_on("artdaq-suite@v4_02_00", when="artdaq=40200")
@@ -111,11 +112,12 @@ class Mu2eTdaqSuite(BundlePackage):
     variant(
         "otsdaq",
         default="30402",
-        values=("0", "30000", "30100", "30200", "30300", "30401", "30402"),
+        values=("0", "30000", "30100", "30200", "30300", "30401", "30402", "30501"),
         multi=False,
         description="Otsdaq version to use",
         when="@v4_00_00:,develop",
     )
+    depends_on("otsdaq-suite@v3_05_01", when="otsdaq=30501")
     depends_on("otsdaq-suite@v3_04_02", when="otsdaq=30402")
     depends_on("otsdaq-suite@v3_04_01", when="otsdaq=30401")
     depends_on("otsdaq-suite@v3_03_00", when="otsdaq=30300")
@@ -139,6 +141,12 @@ class Mu2eTdaqSuite(BundlePackage):
         default=False,
         description="Whether to build the G4 variant of the Offline",
     )
+
+    variant("ci", default=True, description="Install utilities used by CI builds")
+    with when("+ci"):
+        depends_on("lcov")
+        depends_on("py-black")
+        depends_on("py-cmake-format")
 
     # Bundle package, list packages that are part of the bundle
     with when("@v9_00_00"):
