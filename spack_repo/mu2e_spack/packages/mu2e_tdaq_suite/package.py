@@ -13,6 +13,7 @@ class Mu2eTdaqSuite(BundlePackage):
     """The Mu2e TDAQ Suite, the software used for Mu2e trigger and data acquisition"""
 
     version("develop")
+    version("v10_00_00")
     version("v9_00_00")
     version("v8_00_00")
     version("v7_01_00_cand")
@@ -150,6 +151,21 @@ class Mu2eTdaqSuite(BundlePackage):
         depends_on("py-cmake-format")
 
     # Bundle package, list packages that are part of the bundle
+    with when("@v10_00_00"):
+        depends_on("artdaq-core-mu2e@v9_02_00")
+        depends_on("mu2e-pcie-utils@v8_01_00")
+        depends_on("artdaq-mu2e@v7_01_00")
+        depends_on("otsdaq-mu2e@v10_00_00")
+        depends_on("otsdaq-mu2e-calorimeter@v8_01_00")
+        depends_on("otsdaq-mu2e-crv@v6_01_00")
+        depends_on("otsdaq-mu2e-extmon@v5_01_00")
+        depends_on("otsdaq-mu2e-stm@v5_01_00")
+        depends_on("Offline@13.01.00~g4", when="~g4")
+        depends_on("Offline@13.01.00+g4", when="+g4")
+        depends_on("otsdaq-mu2e-tracker@v8_00_00")
+        depends_on("otsdaq-mu2e-dqm@v7_01_00")
+        depends_on("otsdaq-mu2e-trigger@v7_01_00")
+        depends_on("mu2e-trig-config@v8_01_00")
     with when("@v9_00_00"):
         depends_on("artdaq-core-mu2e@v9_00_00")
         depends_on("mu2e-pcie-utils@v8_00_00")

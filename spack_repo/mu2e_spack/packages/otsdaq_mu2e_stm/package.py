@@ -26,6 +26,7 @@ class OtsdaqMu2eStm(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v5_01_00", commit="1ebd9ba554d7c2167d0881ddd47622c8a541d3c5")
     version("v5_00_00", commit="c6108a0b8b73da8042ede5d714d57059d65eee28")
     version("v4_01_00", commit="c7459b63328cdc32d2032580d4f4854d82843c81")
     version("v4_00_00", commit="bc0835180191b512d472c9c26fb5c3b7839613d0")
