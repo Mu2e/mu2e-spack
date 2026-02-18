@@ -71,6 +71,7 @@ class OtsdaqMu2eTrigger(CMakePackage):
         env.prepend_path("CET_PLUGIN_PATH", prefix.lib)
         # Ensure we can find fhicl files
         env.prepend_path("FHICL_FILE_PATH", prefix + "/fcl")
+        env.prepend_path("PYTHONPATH", prefix.python)
         # Cleaup.
         sanitize_environments(env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH")
 
@@ -80,5 +81,6 @@ class OtsdaqMu2eTrigger(CMakePackage):
         env.prepend_path("CET_PLUGIN_PATH", prefix.lib)
         # Ensure we can find fhicl files
         env.prepend_path("FHICL_FILE_PATH", prefix + "/fcl")
+        env.prepend_path("PYTHONPATH", prefix.python)
         # Cleaup.
         sanitize_environments(env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH")
