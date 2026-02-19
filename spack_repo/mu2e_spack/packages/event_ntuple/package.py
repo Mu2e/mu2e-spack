@@ -36,7 +36,7 @@ class EventNtuple(CMakePackage):
     depends_on("cxx", type="build")
 
     # Direct dependencies
-    depends_on("Offline")
+    depends_on("offline")
     depends_on("production")
     depends_on("mu2e-trig-config")
 

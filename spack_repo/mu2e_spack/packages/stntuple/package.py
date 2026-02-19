@@ -54,7 +54,7 @@ class Stntuple(CMakePackage):
 #    depends_on("opencv"    , when="+opencv")
 
     depends_on("cetmodules", type="build")
-    depends_on("Offline")
+    depends_on("offline")
 #------------------------------------------------------------------------------
 # P.Murat: leave it as is for now, as I only need to build w/o sqlite, everything
 #          else is OK

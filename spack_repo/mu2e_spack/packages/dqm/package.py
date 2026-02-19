@@ -36,7 +36,7 @@ class Dqm(CMakePackage):
     depends_on("cxx", type="build")
 
     # Direct dependencies
-    depends_on("Offline")
+    depends_on("offline")
 
     def cmake_args(self):
         args = [
