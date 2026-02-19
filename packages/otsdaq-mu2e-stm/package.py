@@ -68,6 +68,7 @@ class OtsdaqMu2eStm(CMakePackage):
         prefix = self.prefix
         # Ensure we can find plugin libraries.
         env.prepend_path("CET_PLUGIN_PATH", prefix.lib)
+        env.set("OTSDAQ_MU2E_STM_LIB", prefix.lib)
         # Ensure we can find fhicl files
         env.prepend_path("FHICL_FILE_PATH", prefix + "/fcl")
         # Cleaup.
@@ -77,6 +78,7 @@ class OtsdaqMu2eStm(CMakePackage):
         prefix = self.prefix
         # Ensure we can find plugin libraries.
         env.prepend_path("CET_PLUGIN_PATH", prefix.lib)
+        env.set("OTSDAQ_MU2E_STM_LIB", prefix.lib)
         # Ensure we can find fhicl files
         env.prepend_path("FHICL_FILE_PATH", prefix + "/fcl")
         # Cleaup.
