@@ -25,6 +25,7 @@ class OtsdaqMu2eCrv(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v6_01_00", commit="0167bf607a7e44e518f836691831d09e57e16adf")
     version("v6_00_00", commit="ad1a41f158eaf664aa43ead1e14d2bd95c7bedf6")
     version("v5_00_00", commit="60edd2c7f84c4d6ab2e8b62a586ab90ca3d1e5e0")
     version("v4_00_00", commit="d60064f3ee5f045fd5f62cb8bbd90d52c28a0a6e")

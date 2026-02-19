@@ -33,6 +33,7 @@ class ArtdaqCoreMu2e(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v9_02_00", commit="a3fbc5c1e57663c37eede16800bce119b4e09dd5")
     version("v9_00_00", commit="46c66dc9933a730adfc6b10de9201d82d5f9a9f1")
     version("v8_03_00", sha256="cb899545566ba64131e159f687f926e8094b3d0056f44acf2312afdf1283a4b2")
     version("v8_02_00", commit="0d6dbe9045de23f091c6a13703c69ce0e68a41e2")
