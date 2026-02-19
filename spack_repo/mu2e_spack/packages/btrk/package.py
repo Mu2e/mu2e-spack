@@ -25,6 +25,9 @@ class Btrk(SConsPackage):
         url = "https://github.com/KFTrack/BTrk/archive/refs/tags/v{0}.tar.gz"
         return url.format(version.underscored)
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("root")
     depends_on("clhep")
 

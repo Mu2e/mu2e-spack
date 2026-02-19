@@ -52,6 +52,8 @@ class OtsdaqMu2eCalorimeter(CMakePackage):
         multi=False,
         description="Use the specified C++ standard when building.",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     depends_on("otsdaq-mu2e@:v3_99_00", when="@:v3_99_00")
     depends_on("otsdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")

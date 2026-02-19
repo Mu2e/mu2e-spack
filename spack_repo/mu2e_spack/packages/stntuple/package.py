@@ -41,6 +41,9 @@ class Stntuple(CMakePackage):
         multi=False,
         description="Use the specified C++ standard when building.",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+    depends_on("fortran", type="build")
 
 #    variant("sqlite"    , default=False, description="Enable SQLite support",)
 #    variant("opencv"    , default=False, description="Enable OPENCV support",)

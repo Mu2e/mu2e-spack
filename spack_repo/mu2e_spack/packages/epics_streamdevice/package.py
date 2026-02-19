@@ -18,6 +18,9 @@ class EpicsStreamdevice(MakefilePackage):
 
     version("2.8.26", sha256="0c212245fb4626a94e291a6744f5483343b3b896907693c6a71048de68faabc4")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     variant("asyn", default=True, description="Enable asyn support")
     variant("pcre", default=True, description="Enable pcre support")
 

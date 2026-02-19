@@ -58,6 +58,8 @@ class Kinkal(CMakePackage):
         sticky=True,
         description="C++ standard",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     def patch(self):
         filter_file(

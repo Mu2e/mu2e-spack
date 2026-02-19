@@ -35,6 +35,8 @@ class EventDisplay(CMakePackage):
         sticky=True,
         description="Use the specified C++ standard when building.",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     # Direct dependencies
     depends_on("Offline")

@@ -20,6 +20,8 @@ class Crvteststand(MakefilePackage):
     git = "https://github.com/Mu2e/CRVteststand.git"
     maintainers = ["ehrlich-uva","YongyiBWu","rlcee", "kutschke"]
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     version("develop", branch="main")
 

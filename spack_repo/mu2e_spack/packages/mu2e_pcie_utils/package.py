@@ -57,6 +57,8 @@ class Mu2ePcieUtils(CMakePackage):
         multi=False,
         description="Use the specified C++ standard when building.",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     variant("kmod",default=False,description="Build Kernel modules.")
     variant("root",default=False,description="Build ROOT interface")

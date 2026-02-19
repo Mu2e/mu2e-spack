@@ -68,6 +68,8 @@ class ArtdaqCoreMu2e(CMakePackage):
         multi=False,
         description="Use the specified C++ standard when building.",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     variant("build_type", default="RelWithDebInfo",
             description="CMake build type")
