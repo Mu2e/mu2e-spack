@@ -31,7 +31,19 @@ class Mu2eTdaqSuite(BundlePackage):
     version("v1_02_02")
 
     # The art-suite Dependency
-    squals = ("112", "117", "118", "122", "123", "126", "128", "130", "131", "132", "133")
+    squals = (
+        "112",
+        "117",
+        "118",
+        "122",
+        "123",
+        "126",
+        "128",
+        "130",
+        "131",
+        "132",
+        "133",
+    )
     variant(
         "s",
         default="133",

@@ -27,7 +27,9 @@ class Mu2eTrigConfig(CMakePackage):
     license("Apache-2.0")
 
     version("main", branch="main", get_full_repo=True)
-    version("develop", branch="main", get_full_repo=True)  # spack-mpd expects develop version
+    version(
+        "develop", branch="main", get_full_repo=True
+    )  # spack-mpd expects develop version
 
     version("v8_01_00", commit="15d4fbf4b029e03a8caf397b5d03783a879124e6")
     version("v8_00_00", commit="dc9ef6de8b4d2bc2b9c68511c1d7c0682b5be7e9")

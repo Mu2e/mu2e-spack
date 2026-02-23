@@ -6,17 +6,21 @@
 from spack.package import *
 import os
 
+
 def sanitize_environments(env, *vars):
     for var in vars:
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
+
 
 class OtsdaqMu2eTrigger(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "https://mu2e.fnal.gov"
     git = "https://github.com/Mu2e/otsdaq-mu2e-trigger.git"
-    url = "https://github.com/Mu2e/otsdaq-mu2e-trigger/archive/refs/tags/v1_04_00.tar.gz"
+    url = (
+        "https://github.com/Mu2e/otsdaq-mu2e-trigger/archive/refs/tags/v1_04_00.tar.gz"
+    )
 
     maintainers("eflumerf", "rrivera747")
 
@@ -35,7 +39,10 @@ class OtsdaqMu2eTrigger(CMakePackage):
     version("v3_02_00", commit="c9454dd65511de02331f0e822e34c68e2665b7ff")
     version("v3_01_00", commit="10d134e1178895ddf51c5c9aae97e15ebb703740")
     version("v3_00_00", commit="a3b1c45cf41ffc92f455ca5eb07d9623d7f7a4fc")
-    version("v1_04_00", sha256="44a92dcb2c5fa5fb0aa8525062e1254768f6617dd4593402dbfb8de67cd11e48")
+    version(
+        "v1_04_00",
+        sha256="44a92dcb2c5fa5fb0aa8525062e1254768f6617dd4593402dbfb8de67cd11e48",
+    )
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/otsdaq-mu2e-trigger/archive/refs/tags/{0}.tar.gz"

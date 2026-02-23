@@ -12,12 +12,15 @@ def sanitize_environments(env, *vars):
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
 
+
 class OtsdaqMu2eTracker(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "https://mu2e.fnal.gov"
     git = "https://github.com/Mu2e/otsdaq-mu2e-tracker.git"
-    url = "https://github.com/Mu2e/otsdaq-mu2e-tracker/archive/refs/tags/v1_04_00.tar.gz"
+    url = (
+        "https://github.com/Mu2e/otsdaq-mu2e-tracker/archive/refs/tags/v1_04_00.tar.gz"
+    )
 
     maintainers("eflumerf", "rrivera747")
 

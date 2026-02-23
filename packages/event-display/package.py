@@ -15,16 +15,25 @@ class EventDisplay(CMakePackage):
     git = "https://github.com/Mu2e/EventDisplay"
     url = "https://github.com/Mu2e/EventDisplay/archive/refs/tags/v07_00_01.tar.gz"
 
-    maintainers("sophiemiddleton","NamithaChitrazee","brownd1978")
+    maintainers("sophiemiddleton", "NamithaChitrazee", "brownd1978")
 
     license("Apache-2.0")
 
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)
 
-    version("07_00_01", sha256="74c99e67b8e5dbe955da2bedd88acec619ef067bf0ad359214b93e052b941b92")
-    version("07_00_00", sha256="280cee943035a2dee4290f6395b73baec201299942a248d9afb7c8140abdcf3c")
-    version("06_04_00", sha256="d76efd7d9e604302fa7c35272113ed14e3635d2155e5dbe8a5728ed407e02e6e")
+    version(
+        "07_00_01",
+        sha256="74c99e67b8e5dbe955da2bedd88acec619ef067bf0ad359214b93e052b941b92",
+    )
+    version(
+        "07_00_00",
+        sha256="280cee943035a2dee4290f6395b73baec201299942a248d9afb7c8140abdcf3c",
+    )
+    version(
+        "06_04_00",
+        sha256="d76efd7d9e604302fa7c35272113ed14e3635d2155e5dbe8a5728ed407e02e6e",
+    )
 
     variant(
         "cxxstd",
@@ -42,8 +51,8 @@ class EventDisplay(CMakePackage):
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/EventNtuple/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
-        aa = str(version.dotted).split('.')
-        return url.format(int(aa[0]),int(aa[1]),int(aa[2]))
+        aa = str(version.dotted).split(".")
+        return url.format(int(aa[0]), int(aa[1]), int(aa[2]))
 
     def cmake_args(self):
         return [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd")]

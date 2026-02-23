@@ -12,6 +12,7 @@ def sanitize_environments(env, *vars):
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
 
+
 class OtsdaqMu2eStm(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
@@ -35,7 +36,10 @@ class OtsdaqMu2eStm(CMakePackage):
     version("v3_02_00", commit="60f66352d3446926eb74ff4f3b51b3b915a8f343")
     version("v3_01_00", commit="9ee314cff5f4596f8c5f657e412c4d7499ede9d2")
     version("v3_00_00", commit="77137d179a477e956f170baa5443a28ebd2a19f7")
-    version("v1_04_00", sha256="242fa56a99a62a1790dbce9bddeb96ccb425e8771c909a96eaf58eba7fc9dd84")
+    version(
+        "v1_04_00",
+        sha256="242fa56a99a62a1790dbce9bddeb96ccb425e8771c909a96eaf58eba7fc9dd84",
+    )
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/otsdaq-mu2e-stm/archive/refs/tags/{0}.tar.gz"

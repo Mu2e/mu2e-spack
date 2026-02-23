@@ -14,6 +14,7 @@ def sanitize_environments(env, *vars):
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
 
+
 class ArtdaqMu2e(CMakePackage):
     """The toolkit currently provides functionality for data transfer,
     event building, event reconstruction and analysis (using the art analysis
@@ -43,9 +44,18 @@ class ArtdaqMu2e(CMakePackage):
     version("v3_02_00", commit="f85274201adcf7008393bf36b0613f41498662f5")
     version("v3_01_00", commit="aaddd212757a9aa47a1b0f3a5269ba7d6a027e5a")
     version("v3_00_00", commit="32eceebf0806d729421e5e891591b63f6bd38a6f")
-    version("v1_07_00", sha256="46ec46069ce45efc69cd9fc3dce8392255d07940fc44e4baac95f10a6c2d2b9e")
-    version("v1_06_01", sha256="b10b287b27bae7c73665809ed67edfe7f692b7435810c0ef476a87ef206de4a0")
-    version("v1_05_02", sha256="480fcd8580a11e08de55dbc0e71a16482e0de0ba23a4ac633ff2e2353877d3be")
+    version(
+        "v1_07_00",
+        sha256="46ec46069ce45efc69cd9fc3dce8392255d07940fc44e4baac95f10a6c2d2b9e",
+    )
+    version(
+        "v1_06_01",
+        sha256="b10b287b27bae7c73665809ed67edfe7f692b7435810c0ef476a87ef206de4a0",
+    )
+    version(
+        "v1_05_02",
+        sha256="480fcd8580a11e08de55dbc0e71a16482e0de0ba23a4ac633ff2e2353877d3be",
+    )
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/artdaq-mu2e/archive/refs/tags/{0}.tar.gz"
@@ -61,10 +71,10 @@ class ArtdaqMu2e(CMakePackage):
 
     depends_on("cetmodules@3.26.00:", type="build")
 
-    depends_on("artdaq@:v3_99_00",when="@:v3_99_00")
-    depends_on("artdaq@v4_00_00:,develop",when="@v4_00_00:,develop")
-    depends_on("mu2e-pcie-utils@:v3_99_00",when="@:v3_99_00")
-    depends_on("mu2e-pcie-utils@v4_00_00:,develop",when="@v4_00_00:,develop")
+    depends_on("artdaq@:v3_99_00", when="@:v3_99_00")
+    depends_on("artdaq@v4_00_00:,develop", when="@v4_00_00:,develop")
+    depends_on("mu2e-pcie-utils@:v3_99_00", when="@:v3_99_00")
+    depends_on("mu2e-pcie-utils@v4_00_00:,develop", when="@v4_00_00:,develop")
 
     depends_on("artdaq cxxstd=17", when="cxxstd=17")
     depends_on("artdaq cxxstd=20", when="cxxstd=20")

@@ -15,13 +15,16 @@ class EventNtuple(CMakePackage):
     git = "https://github.com/Mu2e/EventNtuple"
     url = "https://github.com/Mu2e/EventNtuple/archive/refs/tags/v06_01_01.tar.gz"
 
-    maintainers("AndrewEdmonds11","brownd1978")
+    maintainers("AndrewEdmonds11", "brownd1978")
 
     license("Apache-2.0")
 
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)
-    version("6.1.1", sha256="6a12d4f7434d17f28e93ffce3c702f0171aec39efcf5f1b147d34d6f325f5fb2")
+    version(
+        "6.1.1",
+        sha256="6a12d4f7434d17f28e93ffce3c702f0171aec39efcf5f1b147d34d6f325f5fb2",
+    )
 
     variant(
         "cxxstd",
@@ -39,8 +42,8 @@ class EventNtuple(CMakePackage):
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/EventNtuple/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
-        aa = str(version.dotted).split('.')
-        return url.format(int(aa[0]),int(aa[1]),int(aa[2]))
+        aa = str(version.dotted).split(".")
+        return url.format(int(aa[0]), int(aa[1]), int(aa[2]))
 
     def cmake_args(self):
         return [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd")]
