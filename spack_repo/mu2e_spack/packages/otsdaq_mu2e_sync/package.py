@@ -41,6 +41,8 @@ class OtsdaqMu2eSync(CMakePackage):
         multi=False,
         description="Use the specified C++ standard when building.",
     )
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     depends_on("otsdaq-mu2e@v4_00_00:,develop")
     depends_on("otsdaq-suite")
