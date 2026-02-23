@@ -18,9 +18,7 @@ class OtsdaqMu2eSync(CMakePackage):
 
     homepage = "https://mu2e.fnal.gov"
     git = "https://github.com/Mu2e/otsdaq-mu2e-sync.git"
-    url = (
-        "https://github.com/Mu2e/otsdaq-mu2e-sync/archive/refs/tags/v1_00_00.tar.gz"
-    )
+    url = "https://github.com/Mu2e/otsdaq-mu2e-sync/archive/refs/tags/v1_00_00.tar.gz"
 
     maintainers("eflumerf", "rrivera747")
 
