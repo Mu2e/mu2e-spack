@@ -15,7 +15,10 @@ class EpicsAsyn(MakefilePackage):
     # https://github.com/epics-modules/asyn/blob/master/LICENSE
     license("Other", checked_by="eflumerf")
 
-    version("4-43", sha256="2cd1da9bafc6e09d18992d00797ea4b966d7404be2fb0d309bc3f542e6b3c7ba")
+    version(
+        "4-43",
+        sha256="2cd1da9bafc6e09d18992d00797ea4b966d7404be2fb0d309bc3f542e6b3c7ba",
+    )
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")

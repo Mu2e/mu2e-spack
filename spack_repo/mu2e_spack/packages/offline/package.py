@@ -12,6 +12,7 @@ def sanitize_environments(env, *vars):
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
 
+
 class Offline(CMakePackage):
     """The Mu2e Offline analysis code suite"""
 
@@ -23,7 +24,9 @@ class Offline(CMakePackage):
     license("Apache-2.0")
 
     version("main", branch="main", get_full_repo=True)
-    version("develop", branch="main", get_full_repo=True) # spack-mpd expects develop version
+    version(
+        "develop", branch="main", get_full_repo=True
+    )  # spack-mpd expects develop version
 
     version("13.01.00", commit="e561c0902f5b4bdd644a260af00e28df054a66d5")
     version("13.00.08", commit="a04e36a5554502b2894d550f3795fc5f2bf89495")
@@ -42,7 +45,9 @@ class Offline(CMakePackage):
     version("10.40.00", commit="90410d6ca1ffe37d6ce1b0314dccbe7e28cc804a")
     version("10.36.00", commit="86ef8c73e1683532cec252bbfe6fa64815a9d4d3")
 
-    variant("g4", default=False, description="Whether to build Geant4-dependent packages")
+    variant(
+        "g4", default=False, description="Whether to build Geant4-dependent packages"
+    )
 
     variant(
         "cxxstd",
@@ -54,16 +59,15 @@ class Offline(CMakePackage):
     depends_on("c", type="build")
     depends_on("cxx", type="build")
 
-    variant("build_type", default="RelWithDebInfo",
-            description="CMake build type")
+    variant("build_type", default="RelWithDebInfo", description="CMake build type")
 
-    variant("python",default=False,description="Build Python bindings")
+    variant("python", default=False, description="Build Python bindings")
 
     # Direct dependencies, see ups/product_deps
     depends_on("geant4@11:", when="+g4")
     depends_on("cetmodules@3.26.00:", type="build")
-    depends_on("artdaq-core-mu2e@:v3_99_00",when="@:11.99.00")
-    depends_on("artdaq-core-mu2e@v4_00_00:,develop",when="@12.00.00:,develop")
+    depends_on("artdaq-core-mu2e@:v3_99_00", when="@:11.99.00")
+    depends_on("artdaq-core-mu2e@v4_00_00:,develop", when="@12.00.00:,develop")
     depends_on("art-root-io")
     depends_on("kinkal")
 
@@ -74,8 +78,8 @@ class Offline(CMakePackage):
     depends_on("kinkal@3.1.5", when="@11.05.01")
     depends_on("kinkal@3.2.1", when="@12.05.00")
     depends_on("kinkal@3.5.1", when="@13.00.08")
-    depends_on("kinkal@3.5.1,develop", when="@develop") # UPDATE AS NEEDED
-    depends_on("kinkal@3.5.1,main", when="@main") # UPDATE AS NEEDED
+    depends_on("kinkal@3.5.1,develop", when="@develop")  # UPDATE AS NEEDED
+    depends_on("kinkal@3.5.1,main", when="@main")  # UPDATE AS NEEDED
 
     depends_on("btrk")
     depends_on("gallery")
@@ -91,7 +95,13 @@ class Offline(CMakePackage):
     depends_on("boost+iostreams+program_options")
 
     def cmake_args(self):
-        args = [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), "-DWITH_G4={0}".format("TRUE" if "+g4" in self.spec else "FALSE"),"-DBUILD_PYTHON_INTERFACE={0}".format("TRUE" if "+python" in self.spec else "FALSE")]
+        args = [
+            self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
+            "-DWITH_G4={0}".format("TRUE" if "+g4" in self.spec else "FALSE"),
+            "-DBUILD_PYTHON_INTERFACE={0}".format(
+                "TRUE" if "+python" in self.spec else "FALSE"
+            ),
+        ]
         return args
 
     def setup_run_environment(self, env):
@@ -102,15 +112,19 @@ class Offline(CMakePackage):
         env.prepend_path("ROOT_LIBRARY_PATH", prefix.lib)
         # Ensure we can find fhicl files
         env.prepend_path("FHICL_FILE_PATH", prefix + "/fcl")
-        env.prepend_path("MU2E_SEARCH_PATH", "/cvmfs/mu2e.opensciencegrid.org/DataFiles")
+        env.prepend_path(
+            "MU2E_SEARCH_PATH", "/cvmfs/mu2e.opensciencegrid.org/DataFiles"
+        )
         env.prepend_path("MU2E_SEARCH_PATH", prefix + "/fcl")
         env.prepend_path("MU2E_SEARCH_PATH", prefix + "/share")
         # show summary of configuration at start of mu2e exe
         pkgs = ["art", "root", "kinkal", "artdaq-core-mu2e"]
         banner = " ".join(f"{pkg}@{self.spec[pkg].version}" for pkg in pkgs)
-        env.set("OFFLINE_BANNER",banner)
+        env.set("OFFLINE_BANNER", banner)
         # Cleaup.
-        sanitize_environments(env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH", "MU2E_SEARCH_PATH")
+        sanitize_environments(
+            env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH", "MU2E_SEARCH_PATH"
+        )
 
     def setup_dependent_run_environment(self, env, dependent_spec):
         prefix = self.prefix
@@ -122,4 +136,10 @@ class Offline(CMakePackage):
         # Ensure we can find data files
         env.prepend_path("MU2E_DATA_PATH", prefix + "/share")
         # Cleaup.
-        sanitize_environments(env, "CET_PLUGIN_PATH", "FHICL_FILE_PATH", "MU2E_SEARCH_PATH", "MU2E_DATA_PATH")
+        sanitize_environments(
+            env,
+            "CET_PLUGIN_PATH",
+            "FHICL_FILE_PATH",
+            "MU2E_SEARCH_PATH",
+            "MU2E_DATA_PATH",
+        )

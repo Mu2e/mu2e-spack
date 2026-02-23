@@ -16,7 +16,7 @@ class Dqm(CMakePackage):
     git = "https://github.com/Mu2e/DQM"
     url = "https://github.com/Mu2e/DQM/archive/refs/tags/0.1.0.tar.gz"
 
-    maintainers("tedeschi","rlcee")
+    maintainers("tedeschi", "rlcee")
 
     license("Apache-2.0")
 

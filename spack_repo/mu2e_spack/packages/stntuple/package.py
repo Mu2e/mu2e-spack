@@ -7,28 +7,31 @@ from spack_repo.builtin.build_systems.cmake import CMakePackage
 from spack.package import *
 import os
 
+
 def sanitize_environments(env, *vars):
     for var in vars:
         env.prune_duplicate_paths(var)
         env.deprioritize_system_paths(var)
 
+
 class Stntuple(CMakePackage):
     """Stntuple by Pavel Murat"""
 
     homepage = "https://github.com/Mu2e/Stntuple"
-    git      = "https://github.com/Mu2e/Stntuple"
-    url      = "https://github.com/pavel1murat/frontends/archive/refs/tags/v1_04_00.tar.gz"  # not sure what it is...
+    git = "https://github.com/Mu2e/Stntuple"
+    url = "https://github.com/pavel1murat/frontends/archive/refs/tags/v1_04_00.tar.gz"  # not sure what it is...
 
     license("BSD")
 
     #    version("main", branch="main", get_full_repo=True)
     #    version("v3_01_00", commit="e7b7abb733e00e8a97f31f02f87746fb29c4949e")
-#------------------------------------------------------------------------------
-# P.Murat: make sure we dont' update ELOG every time
-# elog-001.patch: fix (kludge) the installation directory
-#------------------------------------------------------------------------------
-    version("main"  , branch="main" , get_full_repo=True, submodules=True)
-    version("cmake" , branch="cmake", get_full_repo=True, submodules=True)
+    # ------------------------------------------------------------------------------
+    # P.Murat: make sure we dont' update ELOG every time
+    # elog-001.patch: fix (kludge) the installation directory
+    # ------------------------------------------------------------------------------
+    version("main", branch="main", get_full_repo=True, submodules=True)
+    version("cmake", branch="cmake", get_full_repo=True, submodules=True)
+
     # patch("elog-001.patch")
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/Stntuple/archive/refs/tags/{0}.tar.gz"
@@ -45,28 +48,31 @@ class Stntuple(CMakePackage):
     depends_on("cxx", type="build")
     depends_on("fortran", type="build")
 
-#    variant("sqlite"    , default=False, description="Enable SQLite support",)
-#    variant("opencv"    , default=False, description="Enable OPENCV support",)
-#    variant("postgresql", default=False, description="Enable Pgsql  support",)
+    #    variant("sqlite"    , default=False, description="Enable SQLite support",)
+    #    variant("opencv"    , default=False, description="Enable OPENCV support",)
+    #    variant("postgresql", default=False, description="Enable Pgsql  support",)
 
-#    depends_on("sqlite"    , when="+sqlite")
-#    depends_on("postgresql", when="+postgresql")
-#    depends_on("opencv"    , when="+opencv")
+    #    depends_on("sqlite"    , when="+sqlite")
+    #    depends_on("postgresql", when="+postgresql")
+    #    depends_on("opencv"    , when="+opencv")
 
     depends_on("cetmodules", type="build")
     depends_on("offline")
-#------------------------------------------------------------------------------
-# P.Murat: leave it as is for now, as I only need to build w/o sqlite, everything
-#          else is OK
-#------------------------------------------------------------------------------
+
+    # ------------------------------------------------------------------------------
+    # P.Murat: leave it as is for now, as I only need to build w/o sqlite, everything
+    #          else is OK
+    # ------------------------------------------------------------------------------
     def cmake_args(self):
-        args = [ self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"), ]
+        args = [
+            self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
+        ]
         if os.path.exists("CMakePresets.cmake"):
             args.extend(["--preset", "default"])
 
-#        args.append('-DNO_PGSQL={0}'.format('FALSE' if "+sqlite" in self.spec else 'TRUE'))
-#        args.append('-DNO_SQLITE={0}'.format('FALSE' if "+sqlite" in self.spec else 'TRUE'))
-#        args.append('-DNO_OPENCV={0}'.format('FALSE' if "+opencv" in self.spec else 'TRUE'))
+        #        args.append('-DNO_PGSQL={0}'.format('FALSE' if "+sqlite" in self.spec else 'TRUE'))
+        #        args.append('-DNO_SQLITE={0}'.format('FALSE' if "+sqlite" in self.spec else 'TRUE'))
+        #        args.append('-DNO_OPENCV={0}'.format('FALSE' if "+opencv" in self.spec else 'TRUE'))
 
         return args
 

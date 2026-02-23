@@ -36,7 +36,10 @@ class ArtdaqCoreMu2e(CMakePackage):
 
     version("v9_02_00", commit="a3fbc5c1e57663c37eede16800bce119b4e09dd5")
     version("v9_00_00", commit="46c66dc9933a730adfc6b10de9201d82d5f9a9f1")
-    version("v8_03_00", sha256="cb899545566ba64131e159f687f926e8094b3d0056f44acf2312afdf1283a4b2")
+    version(
+        "v8_03_00",
+        sha256="cb899545566ba64131e159f687f926e8094b3d0056f44acf2312afdf1283a4b2",
+    )
     version("v8_02_00", commit="0d6dbe9045de23f091c6a13703c69ce0e68a41e2")
     version("v8_01_00", commit="d39fedd0ac95d3ee071a4a88b3bfa9021c58d472")
     version("v8_00_02", commit="2ca87b7c723e28701cca9dad9b9dfc587de8b127")
@@ -50,12 +53,30 @@ class ArtdaqCoreMu2e(CMakePackage):
     version("v3_02_00", commit="f0814116e7aaacbd69c5884fe56c8bbdf2b2d4da")
     version("v3_01_00", commit="ee419440459a7343692ae6042dcbc6653b59b8c5")
     version("v3_00_00", commit="2dcbb50e8495f616c1164a6514371b8314e11b7a")
-    version("v2_01_03", sha256="32f1b0b0669beeaf3f85d578e225b04579507590cc3ae7c96f16aacb5aa541d2")
-    version("v2_01_02", sha256="cb492dcd67c1676bc78cf251f3541fc583625f8b71f9486e29603f8a104de531")
-    version("v1_09_02", sha256="4a2789b7a2bcff2a30b70562e5543d73f503e02eb6a990aa6bb80ceeec614cbf")
-    version("v1_09_01", sha256="4f1d6097636ed48f2d0fad5b02ef0ddc2e64d3b75e2f1d1cd41bd2b24df62adb")
-    version("v1_08_08", sha256="bfa5a5baf3a9bd2b874f1d0989d73f965b4aec1e820a458b29b5f3668e2a3ff4")
-    version("v1_08_04", sha256="a145f195ebc93a2a20e08bcbc227325b03852c5fe0702cfca3ba92ffd91fb398")
+    version(
+        "v2_01_03",
+        sha256="32f1b0b0669beeaf3f85d578e225b04579507590cc3ae7c96f16aacb5aa541d2",
+    )
+    version(
+        "v2_01_02",
+        sha256="cb492dcd67c1676bc78cf251f3541fc583625f8b71f9486e29603f8a104de531",
+    )
+    version(
+        "v1_09_02",
+        sha256="4a2789b7a2bcff2a30b70562e5543d73f503e02eb6a990aa6bb80ceeec614cbf",
+    )
+    version(
+        "v1_09_01",
+        sha256="4f1d6097636ed48f2d0fad5b02ef0ddc2e64d3b75e2f1d1cd41bd2b24df62adb",
+    )
+    version(
+        "v1_08_08",
+        sha256="bfa5a5baf3a9bd2b874f1d0989d73f965b4aec1e820a458b29b5f3668e2a3ff4",
+    )
+    version(
+        "v1_08_04",
+        sha256="a145f195ebc93a2a20e08bcbc227325b03852c5fe0702cfca3ba92ffd91fb398",
+    )
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/artdaq-core-mu2e/archive/refs/tags/{0}.tar.gz"
@@ -71,8 +92,7 @@ class ArtdaqCoreMu2e(CMakePackage):
     depends_on("c", type="build")
     depends_on("cxx", type="build")
 
-    variant("build_type", default="RelWithDebInfo",
-            description="CMake build type")
+    variant("build_type", default="RelWithDebInfo", description="CMake build type")
 
     depends_on("cetmodules@3.26.00:", type="build")
 
