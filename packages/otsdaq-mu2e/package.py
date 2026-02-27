@@ -87,6 +87,8 @@ class OtsdaqMu2e(CMakePackage):
     depends_on("artdaq-mu2e@:v3_99_00", when="@:v3_99_00")
     depends_on("artdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
 
+    depends_on("cppzmq", type="build")
+
     def cmake_args(self):
         args = [
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
