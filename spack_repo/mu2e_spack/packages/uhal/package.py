@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
 from spack.package import *
 import os
 
@@ -33,6 +34,9 @@ class Uhal(MakefilePackage):
     )
     variant("gui", default=True, description="Whether to build the GUI component")
     variant("python", default=True, description="Whether to build the Python bindings")
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     depends_on("boost")
     depends_on("pugixml")
