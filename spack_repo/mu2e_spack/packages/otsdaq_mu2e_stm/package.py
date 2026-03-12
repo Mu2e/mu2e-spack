@@ -60,6 +60,7 @@ class OtsdaqMu2eStm(CMakePackage):
     depends_on("otsdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
     depends_on("otsdaq-suite")
     depends_on("cetmodules@3.26.00:", type="build")
+    depends_on("uhal+python")
 
     def cmake_args(self):
         args = [
