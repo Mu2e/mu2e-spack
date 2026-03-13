@@ -41,7 +41,7 @@ class Uhal(MakefilePackage):
     depends_on("boost")
     depends_on("pugixml")
 
-    depends_on("erlang", when="+controlhub")
+    depends_on("erlang@:26.0", when="+controlhub")
     extends("python", when="+python")
     depends_on("py-pybind11", when="+python")
     depends_on("py-setuptools", when="+python")
