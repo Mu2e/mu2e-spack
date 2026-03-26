@@ -53,7 +53,17 @@ class Mu2eTdaqSuite(BundlePackage):
     variant(
         "artdaq",
         default="40700",
-        values=("0", "40000", "40100", "40200", "40300", "40401", "40500", "40600", "40700"),
+        values=(
+            "0",
+            "40000",
+            "40100",
+            "40200",
+            "40300",
+            "40401",
+            "40500",
+            "40600",
+            "40700",
+        ),
         multi=False,
         description="Artdaq suite version to use",
     )
