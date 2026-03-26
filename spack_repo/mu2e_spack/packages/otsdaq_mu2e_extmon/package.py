@@ -27,6 +27,7 @@ class OtsdaqMu2eExtmon(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v5_02_00", commit="5e58336ef32c50ce83e7bc1b1f11bfa6866bbaed")
     version("v5_01_00", commit="6363e82004a41ddc03f0caa9fb81a2620c22f557")
     version("v5_00_00", commit="0a8d043a5d0a069335a1682ac99949474663dd61")
     version("v4_01_00", commit="3da8e6c9e1239049997927af6553221e346c4f56")
