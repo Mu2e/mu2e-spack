@@ -81,7 +81,7 @@ class Mu2eTdaqSuite(BundlePackage):
     # The otsdaq Dependency
     variant(
         "otsdaq",
-        default="30600",
+        default="30700",
         values=(
             "0",
             "30000",
