@@ -27,7 +27,7 @@ class OtsdaqMu2eSync(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
-    version("v1_01_00", commit="b5ee459d5207303cff9b94e42d5011b5b355a52c")
+    version("v1_01_00", commit="a4f6c00a3ead92b54386e6f81aa5e3b5a93422ca")
     version("v1_00_00", commit="9df3faf3cc79e0b239a8ecff75a3bf69cc800dbb")
 
     def url_for_version(self, version):
