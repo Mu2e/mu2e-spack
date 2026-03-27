@@ -75,15 +75,6 @@ class Mu2eTdaqSuite(BundlePackage):
     depends_on("artdaq-suite@v4_02_00", when="artdaq=40200")
     depends_on("artdaq-suite@v4_01_00", when="artdaq=40100")
     depends_on("artdaq-suite@v4_00_00", when="artdaq=40000")
-    depends_on("artdaq-suite@v3_16_00", when="artdaq=31600")
-    depends_on("artdaq-suite@v3_15_00", when="artdaq=31500")
-    depends_on("artdaq-suite@v3_14_01", when="artdaq=31401")
-    depends_on("artdaq-suite@v3_14_00", when="artdaq=31400")
-    depends_on("artdaq-suite@v3_13_01", when="artdaq=31301")
-    depends_on("artdaq-suite@v3_13_00", when="artdaq=31300")
-    depends_on("artdaq-suite@v3_12_07", when="artdaq=31207")
-    depends_on("artdaq-suite@v3_12_03", when="artdaq=31203")
-    depends_on("artdaq-suite@v3_12_02", when="artdaq=31202")
     depends_on("artdaq-suite+db+epics~demo~pcp")
 
     # The otsdaq Dependency
