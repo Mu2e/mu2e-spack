@@ -46,7 +46,7 @@ class OtsdaqMu2eSync(CMakePackage):
 
     depends_on("otsdaq-mu2e@v4_00_00:,develop")
     depends_on("otsdaq-suite")
-    depends_on("Offline@12.00.00:,develop,main")
+    depends_on("offline@12.00.00:,develop,main")
     depends_on("cetmodules@3.26.00:", type="build")
 
     def cmake_args(self):
