@@ -64,6 +64,7 @@ class OtsdaqMu2eStm(CMakePackage):
     depends_on("py-dash@3:")
     depends_on("py-psutil")
     depends_on("py-dash-mantine-components")
+    depends_on("py-scipy")
 
     def cmake_args(self):
         args = [
