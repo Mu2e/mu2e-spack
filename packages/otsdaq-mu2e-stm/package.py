@@ -60,6 +60,11 @@ class OtsdaqMu2eStm(CMakePackage):
     depends_on("cetmodules@3.26.00:", type="build")
     depends_on("uhal+python")
 
+    # Dashboard
+    depends_on("py-dash@3:")
+    depends_on("py-psutil")
+    depends_on("py-dash-mantine-components")
+
     def cmake_args(self):
         args = [
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
