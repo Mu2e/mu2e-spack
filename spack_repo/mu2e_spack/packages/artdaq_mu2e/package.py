@@ -85,7 +85,8 @@ class ArtdaqMu2e(CMakePackage):
     depends_on("artdaq cxxstd=20", when="cxxstd=20")
     depends_on("artdaq-suite")
 
-    depends_on("cppzmq")
+    depends_on("cppzmq", type="build")
+    depends_on("postgresql")
 
     def cmake_args(self):
         args = [
