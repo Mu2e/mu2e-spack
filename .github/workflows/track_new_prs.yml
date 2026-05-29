@@ -3,6 +3,10 @@ on:
   pull_request:
     types:
       - opened
+
+permissions:
+  contents: read
+
 jobs:
   track_issue:
     runs-on: ubuntu-latest
