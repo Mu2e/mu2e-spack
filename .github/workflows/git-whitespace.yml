@@ -17,6 +17,6 @@ on:
 jobs:
   check_whitespace_dispatch:
     name: Check Git whitespace
-    uses: art-daq/.github/.github/workflows/git-whitespace.yml@stable
+    uses: Mu2e/.github/.github/workflows/git-whitespace.yml@stable
     with:
       against-ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event_name == 'push' && github.event.before || 0 }}
