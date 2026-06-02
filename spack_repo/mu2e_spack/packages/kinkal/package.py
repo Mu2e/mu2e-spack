@@ -21,6 +21,10 @@ class Kinkal(CMakePackage):
     version("develop", branch="main", get_full_repo=True)
 
     version(
+        "3.6.0",
+        sha256="ec60fddd3625d57e8fc2c6736cbeb468b0aac44076f2e959b41010efd449466b",
+    )
+    version(
         "3.5.1",
         sha256="456f7267d20f6f42ca1ef3432c9e7c3aa0891a64782d151fd59e6868a90a255b",
     )
