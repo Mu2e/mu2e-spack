@@ -82,7 +82,7 @@ class Offline(CMakePackage):
     depends_on("kinkal@3.6.0,develop", when="@develop")  # UPDATE AS NEEDED
     depends_on("kinkal@3.6.0,main", when="@main")  # UPDATE AS NEEDED
 
-    depends_on("btrk")
+    depends_on("btrk", when="@:13.00.09")
     depends_on("gallery")
     depends_on("cry", when="+g4")
     depends_on("swig", type="build")
