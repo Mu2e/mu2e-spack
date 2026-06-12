@@ -6,6 +6,7 @@
 import os
 from pathlib import Path
 from spack.package import *
+from spack_repo.builtin.build_systems.cmake import CMakePackage
 
 
 class ArtAnalysis(CMakePackage):
@@ -35,6 +36,9 @@ class ArtAnalysis(CMakePackage):
         sticky=True,
         description="Use the specified C++ standard when building.",
     )
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     # Direct dependencies
     depends_on("Offline")
