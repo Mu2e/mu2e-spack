@@ -63,6 +63,7 @@ class OtsdaqMu2eCrv(CMakePackage):
     depends_on("otsdaq-mu2e@v4_00_00:,develop", when="@v4_00_00:,develop")
     depends_on("otsdaq-suite")
     depends_on("cetmodules@3.26.00:", type="build")
+    depends_on("Offline@12.00.00:,develop,main", when="@v6_00_00:,develop")
     depends_on("root+webgui+http+root7")
 
     def cmake_args(self):
