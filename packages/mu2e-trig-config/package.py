@@ -31,6 +31,7 @@ class Mu2eTrigConfig(CMakePackage):
         "develop", branch="main", get_full_repo=True
     )  # spack-mpd expects develop version
 
+    version("v8_08_00", commit="765aec7ade1a4ee7ec5170df3980de62b8f0932d")
     version("v8_07_01", commit="6229cdc3c248271f64eb1e298e4f4e1b683c2581")
     version("v8_03_00", commit="de2bf8adb25fcb2020ddcf48d4045e7ea98d67bc")
     version("v8_01_00", commit="15d4fbf4b029e03a8caf397b5d03783a879124e6")
