@@ -84,6 +84,7 @@ class Mu2eTdaqSuite(BundlePackage):
     depends_on("artdaq-suite@v4_01_00", when="artdaq=40100")
     depends_on("artdaq-suite@v4_00_00", when="artdaq=40000")
     depends_on("artdaq-suite+db+epics~demo~pcp")
+    depends_on("artdaq-daqinterface+db")
 
     # The otsdaq Dependency
     variant(
