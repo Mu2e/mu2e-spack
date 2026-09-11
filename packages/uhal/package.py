@@ -34,7 +34,9 @@ class Uhal(MakefilePackage):
     variant("gui", default=True, description="Whether to build the GUI component")
     variant("python", default=True, description="Whether to build the Python bindings")
 
-    depends_on("boost")
+    # uhal links libboost_filesystem/regex/system/chrono directly (see Makefiles),
+    # so require the compiled Boost libraries rather than accepting a header-only Boost.
+    depends_on("boost+filesystem+regex+system+chrono+thread")
     depends_on("pugixml")
 
     depends_on("erlang", when="+controlhub")
