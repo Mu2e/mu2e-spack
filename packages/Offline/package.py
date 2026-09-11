@@ -70,6 +70,7 @@ class Offline(CMakePackage):
     depends_on("artdaq-core-mu2e@v4_00_00:,develop", when="@12.00.00:,develop")
     depends_on("art-root-io")
     depends_on("kinkal")
+    depends_on("root@6.38:", when="@main,develop")
 
     depends_on("kinkal@3:", when="@11.01.00:")
     depends_on("kinkal@3.0.1", when="@11.02.00")
