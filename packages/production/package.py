@@ -61,10 +61,6 @@ class Production(Package):
             install_tree(
                 self.stage.source_path + "/" + dd, prefix + "/fcl/Production/" + dd
             )
-        install_tree(
-            self.stage.source_path + "/CampaignConfig",
-            prefix + "/share/CampaignConfig/",
-        )
 
     def setup_run_environment(self, env):
         env.prepend_path("PATH", self.prefix.bin)
