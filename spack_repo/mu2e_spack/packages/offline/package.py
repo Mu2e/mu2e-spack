@@ -28,6 +28,8 @@ class Offline(CMakePackage):
         "develop", branch="main", get_full_repo=True
     )  # spack-mpd expects develop version
 
+    version("13.38.00", commit="329c10038125102a64858d88bb9031717594ad4f")
+    version("13.35.00", commit="da434b83003f1e47302b5c0c4c63114ced9a005c")
     version("13.35.00", commit="da434b83003f1e47302b5c0c4c63114ced9a005c")
     version("13.15.00", commit="83b5e2ff2d44af8790386b1abb702433a0b148ed")
     version("13.04.00", commit="6a994e7b726e19bdd3b368cefd03b39fcf40a37b")
@@ -73,7 +75,7 @@ class Offline(CMakePackage):
     depends_on("artdaq-core-mu2e@v4_00_00:,develop", when="@12.00.00:,develop")
     depends_on("art-root-io")
     depends_on("kinkal")
-    depends_on("root@6.38:", when="@main,develop")
+    depends_on("root@6.38:", when="@13.38:,main,develop")
 
     depends_on("kinkal@3:", when="@11.01.00:")
     depends_on("kinkal@3.0.1", when="@11.02.00")
@@ -82,6 +84,8 @@ class Offline(CMakePackage):
     depends_on("kinkal@3.1.5", when="@11.05.01")
     depends_on("kinkal@3.2.1", when="@12.05.00")
     depends_on("kinkal@3.5.1", when="@13.00.08")
+    depends_on("kinkal@3.6.0", when="@13.01:13.35.99")
+    depends_on("kinkal@3.7.0", when="@13.38:")
     depends_on("kinkal@3.7.0,develop", when="@develop")  # UPDATE AS NEEDED
     depends_on("kinkal@3.7.0,main", when="@main")  # UPDATE AS NEEDED
 
