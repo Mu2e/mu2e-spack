@@ -38,7 +38,9 @@ class Uhal(MakefilePackage):
     depends_on("c", type="build")
     depends_on("cxx", type="build")
 
-    depends_on("boost")
+    # uhal links libboost_filesystem/regex/system/chrono directly (see Makefiles),
+    # so require the compiled Boost libraries rather than accepting a header-only Boost.
+    depends_on("boost+filesystem+regex+system+chrono+thread")
     depends_on("pugixml")
 
     depends_on("erlang@:26.0", when="+controlhub")
