@@ -103,6 +103,12 @@ class Uhal(MakefilePackage):
     def install_targets(self):
         return ["prefix={0}".format(self.prefix), "install"]
 
+    def setup_build_environment(self, env):
+        env.set("CACTUS_ROOT", self.prefix)
+
+    def setup_dependent_build_environment(self, env, dependent_spec):
+        env.set("CACTUS_ROOT", self.prefix)
+
     def setup_run_environment(self, env):
         env.set("CACTUS_ROOT", self.prefix)
 
