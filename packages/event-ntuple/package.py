@@ -22,7 +22,7 @@ class EventNtuple(CMakePackage):
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)
     version(
-        "06_15_00",
+        "6.15.0",
         sha256="0a25e3c8301aaee614c635e1b1e4b78263574df9b95e6e50e15af94b23aa2944",
     )
     version(
