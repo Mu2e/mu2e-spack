@@ -23,6 +23,10 @@ class ArtAnalysis(CMakePackage):
     version("develop", branch="main", get_full_repo=True)
 
     version(
+        "00_02_00",
+        sha256="14580973058a112a43388d46060eaf908713e45360e78150994b8b5b20c80de0",
+    )
+    version(
         "00_01_00",
         sha256="102597a16d8428fb9cd8c61b43235503ca3aff0809f9805603df00534216bc87",
     )
@@ -40,6 +44,8 @@ class ArtAnalysis(CMakePackage):
     depends_on("Offline")
     depends_on("production")
     depends_on("mu2e-trig-config")
+    depends_on("xgboost")
+    depends_on("mu2e-ort")
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/EventNtuple/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
