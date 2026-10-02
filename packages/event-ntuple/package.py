@@ -22,6 +22,10 @@ class EventNtuple(CMakePackage):
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)
     version(
+        "06_15_00",
+        sha256="0a25e3c8301aaee614c635e1b1e4b78263574df9b95e6e50e15af94b23aa2944",
+    )
+    version(
         "6.1.1",
         sha256="6a12d4f7434d17f28e93ffce3c702f0171aec39efcf5f1b147d34d6f325f5fb2",
     )
@@ -39,6 +43,7 @@ class EventNtuple(CMakePackage):
     depends_on("Offline")
     depends_on("production")
     depends_on("mu2e-trig-config")
+    depends_on("art-analysis")
 
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/EventNtuple/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
