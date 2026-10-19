@@ -98,7 +98,7 @@ class Offline(CMakePackage):
     depends_on("postgresql")
     depends_on("openblas")
     depends_on("root+tmva-sofie+spectrum+opengl")
-    depends_on("root+builtin_civetweb") # Activate civetweb workaround
+    depends_on("root+builtin_civetweb")  # Activate civetweb workaround
     depends_on("boost+iostreams+program_options")
 
     def cmake_args(self):
