@@ -28,6 +28,7 @@ class Mu2ePcieUtils(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
+    version("v9_03_00", commit="b407513a7c1a5def0ffe8dae555ab2b78822ed20")
     version("v9_02_00", commit="97051e3e6f023af2c9c38b4ab2708761f812e9cb")
     version("v9_01_00", commit="0fcf8dcb93c8b36f88e5ad51375a7c831e51c867")
     version("v8_05_00", commit="a00aa12aaa14703ae4ecb04d5ca21562ae3b5ee2")

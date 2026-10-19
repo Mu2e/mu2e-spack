@@ -28,8 +28,8 @@ class Offline(CMakePackage):
         "develop", branch="main", get_full_repo=True
     )  # spack-mpd expects develop version
 
+    version("13.40.00", commit="8fdf0eadfc1758810cacd7da6cdedc6895ac4862")
     version("13.38.00", commit="39992bc7fb0ecf9229e4f41edf1feed14d073d46")
-    version("13.35.00", commit="da434b83003f1e47302b5c0c4c63114ced9a005c")
     version("13.35.00", commit="da434b83003f1e47302b5c0c4c63114ced9a005c")
     version("13.15.00", commit="83b5e2ff2d44af8790386b1abb702433a0b148ed")
     version("13.04.00", commit="6a994e7b726e19bdd3b368cefd03b39fcf40a37b")
@@ -85,9 +85,10 @@ class Offline(CMakePackage):
     depends_on("kinkal@3.2.1", when="@12.05.00")
     depends_on("kinkal@3.5.1", when="@13.00.08")
     depends_on("kinkal@3.6.0", when="@13.01:13.35.99")
-    depends_on("kinkal@3.7.0", when="@13.38:")
-    depends_on("kinkal@3.7.0,develop", when="@develop")  # UPDATE AS NEEDED
-    depends_on("kinkal@3.7.0,main", when="@main")  # UPDATE AS NEEDED
+    depends_on("kinkal@3.7.0", when="@13.38.00")
+    depends_on("kinkal@3.8.0", when="@13.40:")
+    depends_on("kinkal@3.8.0,develop", when="@develop")  # UPDATE AS NEEDED
+    depends_on("kinkal@3.8.0,main", when="@main")  # UPDATE AS NEEDED
 
     depends_on("btrk", when="@:13.00.09")
     depends_on("gallery")
