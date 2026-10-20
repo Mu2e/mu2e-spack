@@ -29,7 +29,7 @@ class OtsdaqMu2eTracker(CMakePackage):
 
     version("develop", branch="develop", get_full_repo=True)
 
-    version("v9_01_00", commit="ad737bb92a1086d1f98a039d7ef1baf8c487eb04")
+    version("v9_01_00", commit="1696376437dc656307276078b871013dca250d1a")
     version("v9_00_00", commit="e802c6ffd57ac139544745680a5ed84ccfd6081d")
     version("v8_02_00", commit="4fb172c6dc1c650588a3cac90b076911a65ee51b")
     version("v8_01_00", commit="9921fe0acf6260ffbf0ab87476a0c7bee07dedd9")
