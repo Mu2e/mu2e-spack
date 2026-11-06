@@ -23,6 +23,10 @@ class ArtAnalysis(CMakePackage):
     version("develop", branch="main", get_full_repo=True)
 
     version(
+        "00_03_00",
+        sha256="f2e02b258fc23c2dfcb63946e422717fe155b003739941a305c4293a67b4f94a",
+    )
+    version(
         "00_02_00",
         sha256="14580973058a112a43388d46060eaf908713e45360e78150994b8b5b20c80de0",
     )
