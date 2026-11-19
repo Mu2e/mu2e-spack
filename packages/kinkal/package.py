@@ -185,7 +185,7 @@ class Kinkal(CMakePackage):
                 else:
                     tdir = self.stage.path
                     linkname = "%s/../KinKal" % self.stage.path
-        if not os.path.islink(linkname):
+        if not os.path.exists(linkname):
             os.symlink(tdir, linkname)
 
     @run_after("install")
