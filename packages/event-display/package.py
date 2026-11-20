@@ -23,7 +23,7 @@ class EventDisplay(CMakePackage):
     version("develop", branch="main", get_full_repo=True)
 
     version(
-        "08_00_00", 
+        "08_00_00",
         sha256="090cbaea9d7503928c52b70db2443a70a2e2592683e3e18bb502177270591371"
     )
     version(
