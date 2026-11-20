@@ -48,6 +48,8 @@ class Production(Package):
         sha256="e4330546549f3c18d286f2772d6e31e0bffb4b0e103708f323e5a8692dd1e124",
     )
 
+    variant("build_type", default="Debug", description="CMake build type")
+
     def url_for_version(self, version):
         url = "https://github.com/Mu2e/Production/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
         aa = str(version.dotted).split(".")
