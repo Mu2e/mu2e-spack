@@ -13,7 +13,7 @@ class EventDisplay(CMakePackage):
 
     homepage = "https://mu2e.fnal.gov"
     git = "https://github.com/Mu2e/EventDisplay"
-    url = "https://github.com/Mu2e/EventDisplay/archive/refs/tags/v07_00_01.tar.gz"
+    url = "https://github.com/Mu2e/EventDisplay/archive/refs/tags/v08_00_00.tar.gz"
 
     maintainers("sophiemiddleton", "NamithaChitrazee", "brownd1978")
 
@@ -22,6 +22,10 @@ class EventDisplay(CMakePackage):
     version("main", branch="main", get_full_repo=True)
     version("develop", branch="main", get_full_repo=True)
 
+    version(
+        "08_00_00",
+        sha256="090cbaea9d7503928c52b70db2443a70a2e2592683e3e18bb502177270591371"
+    )
     version(
         "07_00_01",
         sha256="74c99e67b8e5dbe955da2bedd88acec619ef067bf0ad359214b93e052b941b92",
@@ -46,11 +50,9 @@ class EventDisplay(CMakePackage):
 
     # Direct dependencies
     depends_on("Offline")
-    depends_on("production")
-    depends_on("mu2e-trig-config")
 
     def url_for_version(self, version):
-        url = "https://github.com/Mu2e/EventNtuple/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
+        url = "https://github.com/Mu2e/EventDisplay/archive/refs/tags/v{:02d}_{:02d}_{:02d}.tar.gz"
         aa = str(version.dotted).split(".")
         return url.format(int(aa[0]), int(aa[1]), int(aa[2]))
 
